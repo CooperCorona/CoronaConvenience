@@ -7,13 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC4D07991D7D233A00862432 /* CoronaConvenience.h in Headers */ = {isa = PBXBuildFile; fileRef = DC4D07981D7D233A00862432 /* CoronaConvenience.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC06DFCA1D81F1A6001C5042 /* UIImage+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC06DFC81D81F1A6001C5042 /* UIImage+Creation.swift */; };
+		DC06DFCB1D81F1A6001C5042 /* UILabel+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC06DFC91D81F1A6001C5042 /* UILabel+Creation.swift */; };
+		DC4D07AF1D7D238600862432 /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A01D7D238600862432 /* Array+Convenience.swift */; };
+		DC4D07B01D7D238600862432 /* Bool+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A11D7D238600862432 /* Bool+Convenience.swift */; };
+		DC4D07B11D7D238600862432 /* CGFloat+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A21D7D238600862432 /* CGFloat+Convenience.swift */; };
+		DC4D07B21D7D238600862432 /* Int+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A31D7D238600862432 /* Int+Convenience.swift */; };
+		DC4D07B31D7D238600862432 /* NSFileManager+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A41D7D238600862432 /* NSFileManager+Convenience.swift */; };
+		DC4D07B41D7D238600862432 /* NSNotificationCenter+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A51D7D238600862432 /* NSNotificationCenter+Convenience.swift */; };
+		DC4D07B51D7D238600862432 /* NSObject+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A61D7D238600862432 /* NSObject+Convenience.swift */; };
+		DC4D07B61D7D238600862432 /* NSOperation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A71D7D238600862432 /* NSOperation+Convenience.swift */; };
+		DC4D07B71D7D238600862432 /* NSURL+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A81D7D238600862432 /* NSURL+Convenience.swift */; };
+		DC4D07B81D7D238600862432 /* Primitives+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A91D7D238600862432 /* Primitives+Convenience.swift */; };
+		DC4D07BA1D7D238600862432 /* Set+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07AB1D7D238600862432 /* Set+Convenience.swift */; };
+		DC4D07BB1D7D238600862432 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07AC1D7D238600862432 /* String+Convenience.swift */; };
+		DC4D07BC1D7D238600862432 /* UIAlertController+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07AD1D7D238600862432 /* UIAlertController+Convenience.swift */; };
+		DC4D07BD1D7D238600862432 /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07AE1D7D238600862432 /* UIView+Convenience.swift */; };
+		DC4D07EA1D7D254600862432 /* UniversalSaverBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07E91D7D254600862432 /* UniversalSaverBase.swift */; };
+		DC7428FF1D7F453D001AF8E1 /* CADisplayLinkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428F41D7F453D001AF8E1 /* CADisplayLinkWrapper.swift */; };
+		DC7429001D7F453D001AF8E1 /* CGPoint+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428F51D7F453D001AF8E1 /* CGPoint+Math.swift */; };
+		DC7429011D7F453D001AF8E1 /* CGRect+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428F61D7F453D001AF8E1 /* CGRect+Math.swift */; };
+		DC7429021D7F453D001AF8E1 /* CGSize+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428F71D7F453D001AF8E1 /* CGSize+Math.swift */; };
+		DC7429031D7F453D001AF8E1 /* CombineIteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428F81D7F453D001AF8E1 /* CombineIteration.swift */; };
+		DC7429041D7F453D001AF8E1 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428F91D7F453D001AF8E1 /* Math.swift */; };
+		DC7429051D7F453D001AF8E1 /* NSScanner+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428FA1D7F453D001AF8E1 /* NSScanner+Swift.swift */; };
+		DC7429081D7F453D001AF8E1 /* UIColor+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428FD1D7F453D001AF8E1 /* UIColor+Math.swift */; };
+		DCC50CD01D81EF1E007092CA /* UIViewController+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC06DFC81D81F1A6001C5042 /* UIImage+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Creation.swift"; sourceTree = "<group>"; };
+		DC06DFC91D81F1A6001C5042 /* UILabel+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Creation.swift"; sourceTree = "<group>"; };
 		DC4D07951D7D233A00862432 /* CoronaConvenience.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoronaConvenience.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC4D07981D7D233A00862432 /* CoronaConvenience.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoronaConvenience.h; sourceTree = "<group>"; };
 		DC4D079A1D7D233A00862432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC4D07A01D7D238600862432 /* Array+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Convenience.swift"; sourceTree = "<group>"; };
+		DC4D07A11D7D238600862432 /* Bool+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Convenience.swift"; sourceTree = "<group>"; };
+		DC4D07A21D7D238600862432 /* CGFloat+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "CGFloat+Convenience.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DC4D07A31D7D238600862432 /* Int+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Int+Convenience.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DC4D07A41D7D238600862432 /* NSFileManager+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+Convenience.swift"; sourceTree = "<group>"; };
+		DC4D07A51D7D238600862432 /* NSNotificationCenter+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "NSNotificationCenter+Convenience.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DC4D07A61D7D238600862432 /* NSObject+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "NSObject+Convenience.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DC4D07A71D7D238600862432 /* NSOperation+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSOperation+Convenience.swift"; sourceTree = "<group>"; };
+		DC4D07A81D7D238600862432 /* NSURL+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Convenience.swift"; sourceTree = "<group>"; };
+		DC4D07A91D7D238600862432 /* Primitives+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Primitives+Convenience.swift"; sourceTree = "<group>"; };
+		DC4D07AB1D7D238600862432 /* Set+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+Convenience.swift"; sourceTree = "<group>"; };
+		DC4D07AC1D7D238600862432 /* String+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
+		DC4D07AD1D7D238600862432 /* UIAlertController+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Convenience.swift"; sourceTree = "<group>"; };
+		DC4D07AE1D7D238600862432 /* UIView+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
+		DC4D07E91D7D254600862432 /* UniversalSaverBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalSaverBase.swift; sourceTree = "<group>"; };
+		DC7428F41D7F453D001AF8E1 /* CADisplayLinkWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CADisplayLinkWrapper.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DC7428F51D7F453D001AF8E1 /* CGPoint+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "CGPoint+Math.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DC7428F61D7F453D001AF8E1 /* CGRect+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "CGRect+Math.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DC7428F71D7F453D001AF8E1 /* CGSize+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "CGSize+Math.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DC7428F81D7F453D001AF8E1 /* CombineIteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineIteration.swift; sourceTree = "<group>"; };
+		DC7428F91D7F453D001AF8E1 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Math.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DC7428FA1D7F453D001AF8E1 /* NSScanner+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "NSScanner+Swift.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DC7428FD1D7F453D001AF8E1 /* UIColor+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Math.swift"; sourceTree = "<group>"; };
+		DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Geometry.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +96,33 @@
 		DC4D07971D7D233A00862432 /* CoronaConvenience */ = {
 			isa = PBXGroup;
 			children = (
-				DC4D07981D7D233A00862432 /* CoronaConvenience.h */,
+				DC4D07A01D7D238600862432 /* Array+Convenience.swift */,
+				DC4D07A11D7D238600862432 /* Bool+Convenience.swift */,
+				DC7428F41D7F453D001AF8E1 /* CADisplayLinkWrapper.swift */,
+				DC4D07A21D7D238600862432 /* CGFloat+Convenience.swift */,
+				DC7428F51D7F453D001AF8E1 /* CGPoint+Math.swift */,
+				DC7428F61D7F453D001AF8E1 /* CGRect+Math.swift */,
+				DC7428F71D7F453D001AF8E1 /* CGSize+Math.swift */,
+				DC7428F81D7F453D001AF8E1 /* CombineIteration.swift */,
 				DC4D079A1D7D233A00862432 /* Info.plist */,
+				DC4D07A31D7D238600862432 /* Int+Convenience.swift */,
+				DC7428F91D7F453D001AF8E1 /* Math.swift */,
+				DC4D07A41D7D238600862432 /* NSFileManager+Convenience.swift */,
+				DC4D07A51D7D238600862432 /* NSNotificationCenter+Convenience.swift */,
+				DC4D07A61D7D238600862432 /* NSObject+Convenience.swift */,
+				DC4D07A71D7D238600862432 /* NSOperation+Convenience.swift */,
+				DC7428FA1D7F453D001AF8E1 /* NSScanner+Swift.swift */,
+				DC4D07A81D7D238600862432 /* NSURL+Convenience.swift */,
+				DC4D07A91D7D238600862432 /* Primitives+Convenience.swift */,
+				DC4D07AB1D7D238600862432 /* Set+Convenience.swift */,
+				DC4D07AC1D7D238600862432 /* String+Convenience.swift */,
+				DC4D07AD1D7D238600862432 /* UIAlertController+Convenience.swift */,
+				DC7428FD1D7F453D001AF8E1 /* UIColor+Math.swift */,
+				DC06DFC81D81F1A6001C5042 /* UIImage+Creation.swift */,
+				DC06DFC91D81F1A6001C5042 /* UILabel+Creation.swift */,
+				DC4D07AE1D7D238600862432 /* UIView+Convenience.swift */,
+				DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */,
+				DC4D07E91D7D254600862432 /* UniversalSaverBase.swift */,
 			);
 			path = CoronaConvenience;
 			sourceTree = "<group>";
@@ -59,7 +134,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC4D07991D7D233A00862432 /* CoronaConvenience.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +204,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4D07EA1D7D254600862432 /* UniversalSaverBase.swift in Sources */,
+				DC4D07BC1D7D238600862432 /* UIAlertController+Convenience.swift in Sources */,
+				DC4D07B51D7D238600862432 /* NSObject+Convenience.swift in Sources */,
+				DC4D07BB1D7D238600862432 /* String+Convenience.swift in Sources */,
+				DC7429031D7F453D001AF8E1 /* CombineIteration.swift in Sources */,
+				DC4D07B41D7D238600862432 /* NSNotificationCenter+Convenience.swift in Sources */,
+				DC7428FF1D7F453D001AF8E1 /* CADisplayLinkWrapper.swift in Sources */,
+				DC4D07B61D7D238600862432 /* NSOperation+Convenience.swift in Sources */,
+				DC7429041D7F453D001AF8E1 /* Math.swift in Sources */,
+				DC06DFCB1D81F1A6001C5042 /* UILabel+Creation.swift in Sources */,
+				DC7429001D7F453D001AF8E1 /* CGPoint+Math.swift in Sources */,
+				DC7429081D7F453D001AF8E1 /* UIColor+Math.swift in Sources */,
+				DC06DFCA1D81F1A6001C5042 /* UIImage+Creation.swift in Sources */,
+				DC4D07B31D7D238600862432 /* NSFileManager+Convenience.swift in Sources */,
+				DC7429011D7F453D001AF8E1 /* CGRect+Math.swift in Sources */,
+				DC4D07BA1D7D238600862432 /* Set+Convenience.swift in Sources */,
+				DC4D07B71D7D238600862432 /* NSURL+Convenience.swift in Sources */,
+				DC4D07B81D7D238600862432 /* Primitives+Convenience.swift in Sources */,
+				DC7429021D7F453D001AF8E1 /* CGSize+Math.swift in Sources */,
+				DC4D07AF1D7D238600862432 /* Array+Convenience.swift in Sources */,
+				DC7429051D7F453D001AF8E1 /* NSScanner+Swift.swift in Sources */,
+				DC4D07B11D7D238600862432 /* CGFloat+Convenience.swift in Sources */,
+				DC4D07B01D7D238600862432 /* Bool+Convenience.swift in Sources */,
+				DC4D07B21D7D238600862432 /* Int+Convenience.swift in Sources */,
+				DCC50CD01D81EF1E007092CA /* UIViewController+Geometry.swift in Sources */,
+				DC4D07BD1D7D238600862432 /* UIView+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,32 +330,41 @@
 		DC4D079E1D7D233A00862432 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CoronaConvenience/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Corona-Corporation.CoronaConvenience";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
 		DC4D079F1D7D233A00862432 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = CoronaConvenience/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Corona-Corporation.CoronaConvenience";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
@@ -278,6 +387,7 @@
 				DC4D079F1D7D233A00862432 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
