@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DC06DFCA1D81F1A6001C5042 /* UIImage+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC06DFC81D81F1A6001C5042 /* UIImage+Creation.swift */; };
 		DC06DFCB1D81F1A6001C5042 /* UILabel+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC06DFC91D81F1A6001C5042 /* UILabel+Creation.swift */; };
+		DC4577531D8515A300711D86 /* BasicCenteredCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4577521D8515A300711D86 /* BasicCenteredCollectionViewLayout.swift */; };
 		DC4D07AF1D7D238600862432 /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A01D7D238600862432 /* Array+Convenience.swift */; };
 		DC4D07B01D7D238600862432 /* Bool+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A11D7D238600862432 /* Bool+Convenience.swift */; };
 		DC4D07B11D7D238600862432 /* CGFloat+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A21D7D238600862432 /* CGFloat+Convenience.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		DC06DFC81D81F1A6001C5042 /* UIImage+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Creation.swift"; sourceTree = "<group>"; };
 		DC06DFC91D81F1A6001C5042 /* UILabel+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Creation.swift"; sourceTree = "<group>"; };
+		DC4577521D8515A300711D86 /* BasicCenteredCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCenteredCollectionViewLayout.swift; sourceTree = "<group>"; };
 		DC4D07951D7D233A00862432 /* CoronaConvenience.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoronaConvenience.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4D079A1D7D233A00862432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC4D07A01D7D238600862432 /* Array+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Convenience.swift"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				DC4D07A01D7D238600862432 /* Array+Convenience.swift */,
+				DC4577521D8515A300711D86 /* BasicCenteredCollectionViewLayout.swift */,
 				DC4D07A11D7D238600862432 /* Bool+Convenience.swift */,
 				DC7428F41D7F453D001AF8E1 /* CADisplayLinkWrapper.swift */,
 				DC4D07A21D7D238600862432 /* CGFloat+Convenience.swift */,
@@ -232,6 +235,7 @@
 				DC7429021D7F453D001AF8E1 /* CGSize+Math.swift in Sources */,
 				DC4D07AF1D7D238600862432 /* Array+Convenience.swift in Sources */,
 				DC7429051D7F453D001AF8E1 /* NSScanner+Swift.swift in Sources */,
+				DC4577531D8515A300711D86 /* BasicCenteredCollectionViewLayout.swift in Sources */,
 				DC4D07B11D7D238600862432 /* CGFloat+Convenience.swift in Sources */,
 				DC4D07B01D7D238600862432 /* Bool+Convenience.swift in Sources */,
 				DC4D07B21D7D238600862432 /* Int+Convenience.swift in Sources */,
