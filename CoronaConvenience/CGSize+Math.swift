@@ -121,7 +121,7 @@ public extension CGSize {
         return CGPoint(x: width, y: height)
         
     }//get as CGPoint
-    
+
     public func flip() -> CGSize {
         return CGSize(width: self.height, height: self.width)
     }

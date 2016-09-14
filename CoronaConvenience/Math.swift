@@ -22,3 +22,21 @@ public func quadraticFormulaA(a:CGFloat, b:CGFloat, c:CGFloat) -> (negative:CGFl
     let negative = (-b - sqrt(radical)) / (2.0 * a)
     return (negative, positive)
 }
+
+func getRetinaScale() -> CGFloat {
+    #if os(iOS)
+    if (UIScreen.mainScreen().respondsToSelector(Selector("nativeScale"))) {
+        let nativeScale = UIScreen.mainScreen().nativeScale
+        return (nativeScale > 0.0) ? nativeScale : 1.0
+    } else if (UIScreen.mainScreen().respondsToSelector(#selector(UIScreen.displayLinkWithTarget(_:selector:)))) {
+        //'scale' property only works correctly
+        //after 'displayLinkWithTarget:selector:
+        //was introduced
+        return UIScreen.mainScreen().scale
+    }
+    
+    return 1.0
+    #else
+    return 1.0
+    #endif
+}

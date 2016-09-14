@@ -8,48 +8,19 @@
 
 #if os(iOS)
 import UIKit
+#else
+import Cocoa
+#endif
 
-public extension UIImage {
-    /*
-    public class func imageWithPDFFile(file:String, size:CGSize, useOptions:Bool = false) -> UIImage? {
-        
-        if let bundleStr = NSBundle.mainBundle().pathForResource(file, ofType: ".pdf") {
-            
-            if let bundleURL = NSURL.fileURLWithPath(bundleStr) {
-                
-                let pdfDoc = CGPDFDocumentCreateWithURL(bundleURL)
-                let pdfPage = CGPDFDocumentGetPage(pdfDoc, 1)
-                let pageFrame = CGPDFPageGetBoxRect(pdfPage, kCGPDFCropBox)
-                
-                if useOptions {
-                    UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-                } else {
-                    UIGraphicsBeginImageContext(size)
-                }
-                let context = UIGraphicsGetCurrentContext()
-                CGContextSaveGState(context)
-                
-                CGContextTranslateCTM(context, 0, size.height)
-                CGContextScaleCTM(context, size.width / pageFrame.size.width, -size.height / pageFrame.size.height)
-                CGContextConcatCTM(context, CGPDFPageGetDrawingTransform(pdfPage, kCGPDFCropBox, pageFrame, 0, true))
-                
-                CGContextDrawPDFPage(context, pdfPage)
-                
-                let image = UIGraphicsGetImageFromCurrentImageContext()
-                let data = UIImagePNGRepresentation(image)
-                
-                CGContextRestoreGState(context)
-                UIGraphicsEndImageContext()
-                
-                return UIImage(data: data)!
-            }//valid url
-            
-        }//valid file path
-        
-        return nil
-    }//create image with pdf file
-    */
-    public class func imageWithPDFFile(file:String, size:CGSize) -> UIImage? {
+#if os(iOS)
+public typealias ImageType = UIImage
+#else
+public typealias ImageType = NSImage
+#endif
+
+public extension ImageType {
+
+    public class func imageWithPDFFile(file:String, size:CGSize) -> ImageType? {
         
         if let bundleStr = NSBundle.mainBundle().pathForResource(file, ofType: ".pdf") {
             let bundleURL = NSURL.fileURLWithPath(bundleStr)
@@ -60,7 +31,7 @@ public extension UIImage {
             
             let colorSpace = CGColorSpaceCreateDeviceRGB()
             
-            let retina              = UIView.getRetinaScale()
+            let retina              = getRetinaScale()
             let width               = Int(size.width * retina)
             let height              = Int(size.height * retina)
             let bytesPerPixel       = 4
@@ -82,13 +53,57 @@ public extension UIImage {
             CGContextRestoreGState(context)
             
             if let image = image {
+                #if os(iOS)
                 return UIImage(CGImage: image, scale: retina, orientation: .Up)
+                #else
+                return NSImage(CGImage: image, size: size)
+                #endif
             }
         }//valid file path
         
         return nil
     }
     
+    public class func imageWithPDFURL(pdfURL:NSURL, size:CGSize) -> ImageType? {
+        let pdfDoc = CGPDFDocumentCreateWithURL(pdfURL)
+        let pdfPage = CGPDFDocumentGetPage(pdfDoc, 1)
+        let pageFrame = CGPDFPageGetBoxRect(pdfPage, CGPDFBox.CropBox)
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        
+        let retina              = getRetinaScale()
+        let width               = Int(size.width * retina)
+        let height              = Int(size.height * retina)
+        let bytesPerPixel       = 4
+        let bitsPerComponent    = 8
+        let bytesPerRow         = bytesPerPixel * width
+        let bitmapInfo          = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue)
+        
+        let context = CGBitmapContextCreate(nil, width, height, bitsPerComponent, bytesPerRow, colorSpace, bitmapInfo.rawValue)
+        
+        CGContextSaveGState(context)
+        
+        CGContextScaleCTM(context, retina * size.width / pageFrame.size.width, retina * size.height / pageFrame.size.height)
+        CGContextConcatCTM(context, CGPDFPageGetDrawingTransform(pdfPage, CGPDFBox.CropBox, pageFrame, 0, true))
+        
+        CGContextDrawPDFPage(context, pdfPage)
+        
+        let image = CGBitmapContextCreateImage(context)
+        
+        CGContextRestoreGState(context)
+        
+        guard let cgImage = image else {
+            return nil
+        }
+        
+        #if os(iOS)
+        return UIImage(CGImage: cgImage, scale: retina, orientation: .Up)
+        #else
+        return NSImage(CGImage: cgImage, size: size)
+        #endif
+    }
+
+    #if os(iOS)
     public func addColor(color:UIColor) -> UIImage {
         
         let frame = CGRect(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height)
@@ -133,6 +148,6 @@ public extension UIImage {
         
         return image
     }//add text to this image
+    #endif
     
 }//UIImage
-#endif
