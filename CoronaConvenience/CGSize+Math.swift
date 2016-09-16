@@ -33,19 +33,19 @@ public func /(left:CGSize, right:CGSize) -> CGSize {
 
 //Equals
 
-public func +=(inout left:CGSize, right:CGSize) {
+public func +=(left:inout CGSize, right:CGSize) {
     left = left + right
 }//plus equals
 
-public func -=(inout left:CGSize, right:CGSize) {
+public func -=(left:inout CGSize, right:CGSize) {
     left = left - right
 }//minus equals
 
-public func *=(inout left:CGSize, right:CGSize) {
+public func *=(left:inout CGSize, right:CGSize) {
     left = left * right
 }//times equals
 
-public func /=(inout left:CGSize, right:CGSize) {
+public func /=(left:inout CGSize, right:CGSize) {
     left = left / right
 }//divide equals
 
@@ -85,19 +85,19 @@ public func /(right:CGFloat, left:CGSize) -> CGSize {
 
 //Scalar equals
 
-public func +=(inout left:CGSize, right:CGFloat) {
+public func +=(left:inout CGSize, right:CGFloat) {
     left = left + right
 }//add equals scalar
 
-public func -=(inout left:CGSize, right:CGFloat) {
+public func -=(left:inout CGSize, right:CGFloat) {
     left = left - right
 }//minus equals scalar
 
-public func *=(inout left:CGSize, right:CGFloat) {
+public func *=(left:inout CGSize, right:CGFloat) {
     left = left * right
 }//times equals scalar
 
-public func /=(inout left:CGSize, right:CGFloat) {
+public func /=(left:inout CGSize, right:CGFloat) {
     left = left / right
 }//divide equals scalar
 

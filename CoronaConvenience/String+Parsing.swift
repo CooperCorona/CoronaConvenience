@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
 
-    public func repeated(amount:Int) -> String {
+    public func repeated(_ amount:Int) -> String {
         if amount == 0 {
             return ""
         }
@@ -29,11 +29,11 @@ extension String {
         }
     }
 
-    public func rangesOfParentheses() -> [Range<Int>] {
-        var ranges:[Range<Int>] = []
+    public func rangesOfParentheses() -> [CountableClosedRange<Int>] {
+        var ranges:[CountableClosedRange<Int>] = []
         var parenthesesCount = 0
         var openingIndex = 0
-        for (i, char) in self.enumerate() {
+        for (i, char) in self.enumerated() {
             if char == "(" {
                 parenthesesCount += 1
                 if parenthesesCount == 1 {
@@ -49,10 +49,10 @@ extension String {
         return ranges
     }
 
-    public mutating func replaceRange(range:Range<Int>, with replaceStr:String) {
-        let start = self.startIndex.advancedBy(range.startIndex)
-        let end = self.startIndex.advancedBy(range.endIndex)
-        self.replaceRange(start..<end, with: replaceStr)
+    public mutating func replaceRange(_ range:CountableRange<Int>, with replaceStr:String) {
+        let start = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
+        let end = self.characters.index(self.startIndex, offsetBy: range.upperBound)
+        self.replaceSubrange(start..<end, with: replaceStr)
     }
     /*
     public mutating func replaceRanges(ranges:[(Range<Int>, String)]) {
@@ -64,33 +64,33 @@ extension String {
         }
     }
     */
-    public mutating func replaceRanges(ranges:[(Range<Int>, String)]) -> [String] {
+    public mutating func replaceRanges(_ ranges:[(CountableRange<Int>, String)]) -> [String] {
         var replacedStrings:[String] = []
         var replaceOffset = 0
         for (range, str) in ranges {
-            let offsetRange = (range.startIndex + replaceOffset)..<(range.endIndex + replaceOffset)
+            let offsetRange:CountableRange = (range.lowerBound + replaceOffset)..<(range.upperBound + replaceOffset)
             replacedStrings.append(self[offsetRange])
             self.replaceRange(offsetRange, with: str)
-            replaceOffset += range.startIndex - range.endIndex + str.characterCount
+            replaceOffset += range.lowerBound - range.upperBound + str.characterCount
         }
         return replacedStrings
     }
 
-    public mutating func replaceRanges<T: GeneratorType where T.Element == String>(ranges:[Range<Int>], replacement withReplacement:T) -> [String] {
+    public mutating func replaceRanges<T: IteratorProtocol>(_ ranges:[CountableRange<Int>], replacement withReplacement:T) -> [String] where T.Element == String {
         var replacement = withReplacement
         var replacedStrings:[String] = []
         var replaceOffset = 0
         for range in ranges {
             let str = replacement.next() ?? "?"
-            let offsetRange = (range.startIndex + replaceOffset)..<(range.endIndex + replaceOffset)
+            let offsetRange = (range.lowerBound + replaceOffset)..<(range.upperBound + replaceOffset)
             replacedStrings.append(self[offsetRange])
             self.replaceRange(offsetRange, with: str)
-            replaceOffset += range.startIndex - range.endIndex + str.characterCount
+            replaceOffset += range.lowerBound - range.upperBound + str.characterCount
         }
         return replacedStrings
     }
 
-    public mutating func replaceRanges(ranges:[Range<Int>], with replaceStrs:[String]) {
-        self.replaceRanges(ranges.iterateWith(replaceStrs).map() { $0 })
+    public mutating func replaceRanges(_ ranges:[CountableRange<Int>], with replaceStrs:[String]) {
+        let _ = self.replaceRanges(ranges.iterateWith(replaceStrs).map() { $0 })
     }
 }

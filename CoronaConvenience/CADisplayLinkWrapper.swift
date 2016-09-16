@@ -24,9 +24,9 @@ public class CADisplayLinkWrapper: NSObject {
     public class InternalWrapper: NSObject
     {
         unowned let owner:CADisplayLinkWrapper
-        lazy var displayLink:CADisplayLink = CADisplayLink(target: self, selector: #selector(InternalWrapper.performAction(_:)))
+        lazy var displayLink:CADisplayLink = CADisplayLink(target: self, selector: #selector(InternalWrapper.performAction(sender:)))
         
-        private init(owner: CADisplayLinkWrapper) {
+        fileprivate init(owner: CADisplayLinkWrapper) {
             self.owner = owner
             
             super.init()
@@ -73,10 +73,10 @@ public class CADisplayLinkWrapper: NSObject {
     ///When true the display link is prevented from firing.
     public var paused:Bool {
         get {
-            return self.wrapper.displayLink.paused
+            return self.wrapper.displayLink.isPaused
         }
         set {
-            self.wrapper.displayLink.paused = newValue
+            self.wrapper.displayLink.isPaused = newValue
         }
     }
     
@@ -104,18 +104,18 @@ public class CADisplayLinkWrapper: NSObject {
     - parameter runLoop: The run loop to be added to.
     - parameter mode: The mode in which the display link will fire.
     */
-    public func addToRunLoop(runLoop: NSRunLoop, forMode mode:String) {
-        self.wrapper.displayLink.addToRunLoop(runLoop, forMode: mode)
+    public func addToRunLoop(runLoop: RunLoop, forMode mode:String) {
+        self.wrapper.displayLink.add(to: runLoop, forMode: RunLoopMode(rawValue: mode))
     }
     
     ///Removes the display link from a given run loop for a given mode.
-    public func removeFromRunLoop(runLoop: NSRunLoop, forMode mode:String) {
-        self.wrapper.displayLink.removeFromRunLoop(runLoop, forMode: mode)
+    public func removeFromRunLoop(runLoop: RunLoop, forMode mode:String) {
+        self.wrapper.displayLink.remove(from: runLoop, forMode: RunLoopMode(rawValue: mode))
     }
     
     ///Adds to NSRunLoop.mainLoop() in NSRunLoopCommonModes.
     public func addToRunLoopDefault() {
-        self.wrapper.displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+        self.wrapper.displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
     }
     
     // MARK: - Logic

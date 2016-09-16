@@ -16,7 +16,7 @@ public class BasicCenteredCollectionViewLayout: UICollectionViewLayout {
     public let numberOfCells:Int
     public let cellSize:CGSize
     public var interitemSpacing:CGFloat = 8.0
-    public var scrollDirection = UICollectionViewScrollDirection.Vertical
+    public var scrollDirection = UICollectionViewScrollDirection.vertical
     private var internalMajorAxisLength:CGFloat = 1024.0
     private var internalMinorAxisLength:CGFloat = 128.0
     public var majorAxisLength:CGFloat {
@@ -38,9 +38,9 @@ public class BasicCenteredCollectionViewLayout: UICollectionViewLayout {
         get {
             if let owner = self.collectionView {
                 switch self.scrollDirection {
-                case .Vertical:
+                case .vertical:
                     return owner.frame.width
-                case .Horizontal:
+                case .horizontal:
                     return owner.frame.height
                 }
             } else {
@@ -56,9 +56,9 @@ public class BasicCenteredCollectionViewLayout: UICollectionViewLayout {
     public var itemsInAxis:Int {
         let cellLength:CGFloat
         switch self.scrollDirection {
-        case .Horizontal:
+        case .horizontal:
             cellLength = self.cellSize.height
-        case .Vertical:
+        case .vertical:
             cellLength = self.cellSize.width
         }
         return Int(floor((self.majorAxisLength - self.interitemSpacing) / (cellLength + self.interitemSpacing)))
@@ -73,50 +73,50 @@ public class BasicCenteredCollectionViewLayout: UICollectionViewLayout {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        self.numberOfCells = aDecoder.decodeIntegerForKey("numberOfCells")
-        self.cellSize = aDecoder.decodeCGSizeForKey("cellSize")
-        self.interitemSpacing = CGFloat(aDecoder.decodeDoubleForKey("interitemSpacing"))
+        self.numberOfCells = aDecoder.decodeInteger(forKey: "numberOfCells")
+        self.cellSize = aDecoder.decodeCGSize(forKey: "cellSize")
+        self.interitemSpacing = CGFloat(aDecoder.decodeDouble(forKey: "interitemSpacing"))
         super.init(coder: aDecoder)
     }
     
-    public override func encodeWithCoder(aCoder: NSCoder) {
-        super.encodeWithCoder(aCoder)
-        aCoder.encodeInteger(self.numberOfCells, forKey: "numberOfCells")
-        aCoder.encodeCGSize(self.cellSize, forKey: "cellSize")
-        aCoder.encodeDouble(Double(self.interitemSpacing), forKey: "interitemSpacing")
+    
+    public override func encode(with aCoder: NSCoder) {
+        super.encode(with: aCoder)
+        aCoder.encode(self.numberOfCells, forKey: "numberOfCells")
+        aCoder.encode(self.cellSize, forKey: "cellSize")
+        aCoder.encode(Double(self.interitemSpacing), forKey: "interitemSpacing")
     }
     
     // MARK: - Logic
-    
-    public override func collectionViewContentSize() -> CGSize {
+    public override var collectionViewContentSize:CGSize {
         let n = CGFloat(self.numberOfCells)
         let m = CGFloat(self.axisCount)
         let minorAxisLength = n * self.cellSize.height + (n + 1.0) * self.interitemSpacing
         switch self.scrollDirection {
-        case .Horizontal:
+        case .horizontal:
             return CGSize(width: self.cellSize.width * m + self.interitemSpacing * (m + 1.0), height: minorAxisLength)
-        case .Vertical:
+        case .vertical:
             return CGSize(width: minorAxisLength, height: self.cellSize.height * m + self.interitemSpacing * (m + 1.0))
         }
     }
     
-    public override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    public override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var attributes:[UICollectionViewLayoutAttributes] = []
         for i in 0..<self.numberOfCells {
-            if let attribute = self.layoutAttributesForItemAtIndexPath(NSIndexPath(forItem: i, inSection: 0))/* where attribute.frame.intersects(rect)*/ {
+            if let attribute = self.layoutAttributesForItem(at: IndexPath(item: i, section: 0))/* where attribute.frame.intersects(rect)*/ {
                 attributes.append(attribute)
             }
         }
         
         return attributes
     }
-    
-    public override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+
+    public override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         
         guard indexPath.item >= 0 && indexPath.item < self.numberOfCells else {
             return nil
         }
-        let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+        let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath as IndexPath)
         let itemsInAxis = self.itemsInAxis
         let majorIndex = indexPath.item / itemsInAxis
         let minorIndex = indexPath.item % itemsInAxis
@@ -132,10 +132,10 @@ public class BasicCenteredCollectionViewLayout: UICollectionViewLayout {
         let offset = CGFloat(-itemCount) / 2.0 + 0.5 + CGFloat(minorIndex)
         let center:CGPoint
         switch self.scrollDirection {
-        case .Horizontal:
+        case .horizontal:
             let y = self.minorAxisLength / 2.0 + self.cellSize.height * offset + self.interitemSpacing * offset
             center = CGPoint(x: self.cellSize.width * (n - 0.5) + n * self.interitemSpacing, y: y)
-        case .Vertical:
+        case .vertical:
             let x = self.minorAxisLength / 2.0 + self.cellSize.width * offset + self.interitemSpacing * offset
             center = CGPoint(x: x, y: self.cellSize.height * (n + 0.5) + n * self.interitemSpacing)
         }
@@ -143,7 +143,7 @@ public class BasicCenteredCollectionViewLayout: UICollectionViewLayout {
         return attributes
     }
     
-    public override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+    public override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
 

@@ -92,7 +92,7 @@ public extension CGRect {
     
     public var center:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMidX(self), y: CGRectGetMidY(self))
+            return CGPoint(x: self.midX, y: self.midY)
         }
         set {
             self = CGRect(center: newValue, size: self.size)
@@ -104,7 +104,7 @@ public extension CGRect {
     public var topLeft:CGPoint {
         get {
 //            return CGPoint(x: CGRectGetMinX(self), y: CGRectGetMaxY(self))
-            return CGPoint(x: CGRectGetMinX(self), y: CGRectGetMinY(self))
+            return CGPoint(x: self.minX, y: self.minY)
         }
         set {
             // I originally had the topLeft & bottomLeft setters
@@ -117,7 +117,7 @@ public extension CGRect {
     
     public var bottomLeft:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMinX(self), y: CGRectGetMaxY(self))
+            return CGPoint(x: self.minX, y: self.maxY)
         }
         set {
             self = CGRect(x: newValue.x, y: newValue.y - self.size.height, width: self.size.width, height: self.size.height)
@@ -126,7 +126,7 @@ public extension CGRect {
     
     public var topRight:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMaxX(self), y: CGRectGetMinY(self))
+            return CGPoint(x: self.maxX, y: self.minY)
         }
         set {
             self = CGRect(x: newValue.x - self.size.width, y: newValue.y, width: self.size.width, height: self.size.height)
@@ -135,7 +135,7 @@ public extension CGRect {
     
     public var bottomRight:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMaxX(self), y: CGRectGetMaxY(self))
+            return CGPoint(x: self.maxX, y: self.maxY)
         }
         set {
             self = CGRect(x: newValue.x - self.size.width, y: newValue.y - self.size.height, width: self.size.width, height: self.size.height)
@@ -146,7 +146,7 @@ public extension CGRect {
     
     public var leftMiddle:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMinX(self), y: CGRectGetMidY(self))
+            return CGPoint(x: self.minX, y: self.midY)
         }
         set {
             self = CGRect(x: newValue.x, y: newValue.y - self.size.height / 2.0, width: self.size.width, height: self.size.height)
@@ -155,7 +155,7 @@ public extension CGRect {
     
     public var rightMiddle:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMaxX(self), y: CGRectGetMidY(self))
+            return CGPoint(x: self.maxX, y: self.midY)
         }
         set {
             self = CGRect(x: newValue.x - self.size.width, y: newValue.y - self.size.height / 2.0, width: self.size.width, height: self.size.height)
@@ -164,7 +164,7 @@ public extension CGRect {
     
     public var topMiddle:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMidX(self), y: CGRectGetMinY(self))
+            return CGPoint(x: self.midX, y: self.minY)
         }
         set {
             self = CGRect(x: newValue.x - self.size.width / 2.0, y: newValue.y, width: self.size.width, height: self.size.height)
@@ -173,7 +173,7 @@ public extension CGRect {
     
     public var bottomMiddle:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMidX(self), y: CGRectGetMaxY(self))
+            return CGPoint(x: self.midX, y: self.maxY)
         }
         set {
             self = CGRect(x: newValue.x - self.size.width / 2.0, y: newValue.y - self.size.height, width: self.size.width, height: self.size.height)
@@ -228,36 +228,36 @@ public extension CGRect {
 //I added setters
 public extension CGRect {
     
-    public mutating func setSizeCentered(size:CGSize) {
+    public mutating func setSizeCentered(_ size:CGSize) {
         self = CGRect(center: self.center, size: size)
     }
     
-    public mutating func setSizeCenteredWidth(width:CGFloat, height:CGFloat) {
+    public mutating func setSizeCenteredWidth(_ width:CGFloat, height:CGFloat) {
         self = CGRect(center: self.center, size: CGSize(width: width, height: height))
     }
     
-    public mutating func setWidthCentered(width:CGFloat) {
+    public mutating func setWidthCentered(_ width:CGFloat) {
         self = CGRect(center: self.center, size: CGSize(width: width, height: self.size.height))
     }
     
-    public mutating func setHeightCentered(height:CGFloat) {
+    public mutating func setHeightCentered(_ height:CGFloat) {
         self = CGRect(center: self.center, size: CGSize(width: self.size.width, height: height))
     }
     
     
-    public mutating func setMinX(newValue:CGFloat) {
+    public mutating func setMinX(_ newValue:CGFloat) {
         self = CGRect(x: newValue, y: self.minY, width: self.width, height: self.height)
     }
     
-    public mutating func setMinY(newValue:CGFloat) {
+    public mutating func setMinY(_ newValue:CGFloat) {
         self = CGRect(x: self.minX, y: newValue, width: self.width, height: self.height)
     }
     
-    public mutating func setMaxX(newValue:CGFloat) {
+    public mutating func setMaxX(_ newValue:CGFloat) {
         self = CGRect(x: newValue - self.width, y: self.minY, width: self.width, height: self.height)
     }
     
-    public mutating func setMaxY(newValue:CGFloat) {
+    public mutating func setMaxY(_ newValue:CGFloat) {
         self = CGRect(x: self.minX, y: newValue - self.height, width: self.width, height: self.height)
     }
 
@@ -269,7 +269,7 @@ extension CGRect {
     
     public var topLeftGL:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMinX(self), y: CGRectGetMaxY(self))
+            return CGPoint(x: self.minX, y: self.maxY)
         }
         set {
             // I originally had the topLeft & bottomLeft setters
@@ -282,7 +282,7 @@ extension CGRect {
     
     public var bottomLeftGL:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMinX(self), y: CGRectGetMinY(self))
+            return CGPoint(x: self.minX, y: self.minY)
         }
         set {
             self = CGRect(origin: newValue, size: self.size)
@@ -291,7 +291,7 @@ extension CGRect {
     
     public var topRightGL:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMaxX(self), y: CGRectGetMaxY(self))
+            return CGPoint(x: self.maxX, y: self.maxY)
         }
         set {
             self = CGRect(x: newValue.x - self.size.width, y: newValue.y - self.size.height, width: self.size.width, height: self.size.height)
@@ -300,7 +300,7 @@ extension CGRect {
     
     public var bottomRightGL:CGPoint {
         get {
-            return CGPoint(x: CGRectGetMaxX(self), y: CGRectGetMinY(self))
+            return CGPoint(x: self.maxX, y: self.minY)
         }
         set {
             self = CGRect(x: newValue.x - self.size.width, y: newValue.y, width: self.size.width, height: self.size.height)
@@ -322,7 +322,7 @@ public extension CGRect {
     [2]: Top Right
     [3]: Bottom Right
     */
-    public func divideAt(point:CGPoint) -> [CGRect] {
+    public func divideAt(_ point:CGPoint) -> [CGRect] {
         
         let topLeft = CGRect(x: self.topLeftGL.x, y: point.y, width: point.x - self.topLeftGL.x, height: self.topLeftGL.y - point.y)
         let bottomLeft = CGRect(x: self.bottomLeftGL.x, y: self.bottomLeftGL.y, width: point.x - self.bottomLeftGL.x, height: point.y - self.bottomLeftGL.y)
@@ -338,7 +338,7 @@ public extension CGRect {
     - parameter percent: The percent, in range [0.0, 1.0].
     - returns: An array of CGRect values that meet at the given percent.
     */
-    public func divideAtPercent(percent:CGPoint) -> [CGRect] {
+    public func divideAtPercent(_ percent:CGPoint) -> [CGRect] {
         return self.divideAt(self.origin + percent * self.size)
     }
 
@@ -362,19 +362,19 @@ public func /(lhs:CGRect, rhs:CGRect) -> CGRect {
     return CGRect(origin: lhs.origin / rhs.origin, size: lhs.size / rhs.size)
 }
 
-public func +=(inout lhs:CGRect, rhs:CGRect) {
+public func +=(lhs:inout CGRect, rhs:CGRect) {
     lhs = CGRect(origin: lhs.origin + rhs.origin, size: lhs.size + rhs.size)
 }
 
-public func -=(inout lhs:CGRect, rhs:CGRect) {
+public func -=(lhs:inout CGRect, rhs:CGRect) {
     lhs = CGRect(origin: lhs.origin - rhs.origin, size: lhs.size - rhs.size)
 }
 
-public func *=(inout lhs:CGRect, rhs:CGRect) {
+public func *=(lhs:inout CGRect, rhs:CGRect) {
     lhs = CGRect(origin: lhs.origin * rhs.origin, size: lhs.size * rhs.size)
 }
 
-public func /=(inout lhs:CGRect, rhs:CGRect) {
+public func /=(lhs:inout CGRect, rhs:CGRect) {
     lhs = CGRect(origin: lhs.origin / rhs.origin, size: lhs.size / rhs.size)
 }
 
@@ -412,19 +412,19 @@ public func /(lhs:CGFloat, rhs:CGRect) -> CGRect {
     return CGRect(origin: lhs / rhs.origin, size: lhs / rhs.size)
 }
 
-public func +=(inout lhs:CGRect, rhs:CGFloat) {
+public func +=(lhs:inout CGRect, rhs:CGFloat) {
     lhs = CGRect(origin: lhs.origin + rhs, size: lhs.size + rhs)
 }
 
-public func -=(inout lhs:CGRect, rhs:CGFloat) {
+public func -=(lhs:inout CGRect, rhs:CGFloat) {
     lhs = CGRect(origin: lhs.origin - rhs, size: lhs.size - rhs)
 }
 
-public func *=(inout lhs:CGRect, rhs:CGFloat) {
+public func *=(lhs:inout CGRect, rhs:CGFloat) {
     lhs = CGRect(origin: lhs.origin * rhs, size: lhs.size * rhs)
 }
 
-public func /=(inout lhs:CGRect, rhs:CGFloat) {
+public func /=(lhs:inout CGRect, rhs:CGFloat) {
     lhs = CGRect(origin: lhs.origin / rhs, size: lhs.size / rhs)
 }
 
@@ -462,19 +462,19 @@ public func /(lhs:CGPoint, rhs:CGRect) -> CGRect {
     return CGRect(origin: lhs / rhs.origin, size: rhs.size)
 }
 
-public func +=(inout lhs:CGRect, rhs:CGPoint) {
+public func +=(lhs:inout CGRect, rhs:CGPoint) {
     lhs = CGRect(origin: lhs.origin + rhs, size: lhs.size)
 }
 
-public func -=(inout lhs:CGRect, rhs:CGPoint) {
+public func -=(lhs:inout CGRect, rhs:CGPoint) {
     lhs = CGRect(origin: lhs.origin - rhs, size: lhs.size)
 }
 
-public func *=(inout lhs:CGRect, rhs:CGPoint) {
+public func *=(lhs:inout CGRect, rhs:CGPoint) {
     lhs = CGRect(origin: lhs.origin * rhs, size: lhs.size)
 }
 
-public func /=(inout lhs:CGRect, rhs:CGPoint) {
+public func /=(lhs:inout CGRect, rhs:CGPoint) {
     lhs = CGRect(origin: lhs.origin / rhs, size: lhs.size)
 }
 
@@ -512,18 +512,18 @@ public func /(lhs:CGSize, rhs:CGRect) -> CGRect {
     return CGRect(origin: rhs.origin, size: lhs / rhs.size)
 }
 
-public func +=(inout lhs:CGRect, rhs:CGSize) {
+public func +=(lhs:inout CGRect, rhs:CGSize) {
     lhs = CGRect(origin: lhs.origin, size: lhs.size + rhs)
 }
 
-public func -=(inout lhs:CGRect, rhs:CGSize) {
+public func -=(lhs:inout CGRect, rhs:CGSize) {
     lhs = CGRect(origin: lhs.origin, size: lhs.size - rhs)
 }
 
-public func *=(inout lhs:CGRect, rhs:CGSize) {
+public func *=(lhs:inout CGRect, rhs:CGSize) {
     lhs = CGRect(origin: lhs.origin, size: lhs.size * rhs)
 }
 
-public func /=(inout lhs:CGRect, rhs:CGSize) {
+public func /=(lhs:inout CGRect, rhs:CGSize) {
     lhs = CGRect(origin: lhs.origin, size: lhs.size / rhs)
 }

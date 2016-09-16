@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class UniversalSaverBase: NSObject {
+open class UniversalSaverBase: NSObject {
     
-    public let fileName:String
-    public let fileExtension:String
-    public let fileDirectory:String?
+    open let fileName:String
+    open let fileExtension:String
+    open let fileDirectory:String?
     
-    public var path:String { return UniversalSaverBase.pathForFile(self.fileName, fileExtension:self.fileExtension, directory:self.fileDirectory) }
+    open var path:String { return UniversalSaverBase.pathForFile(self.fileName, fileExtension:self.fileExtension, directory:self.fileDirectory) }
     
     public init(file:String, fileExtension:String, directory:String?) {
         
@@ -31,27 +31,27 @@ public class UniversalSaverBase: NSObject {
     }//initialize
     
     
-    public func save() -> Bool {
+    open func save() -> Bool {
         
         let path = self.path
         
         let mData = NSMutableData()
-        let archive = NSKeyedArchiver(forWritingWithMutableData: mData)
+        let archive = NSKeyedArchiver(forWritingWith: mData)
         
         self.saveWithArchiver(archive)
         
         archive.finishEncoding()
-        return mData.writeToFile(path, atomically: true)
+        return mData.write(toFile: path, atomically: true)
     }//save
     
-    public func load() -> Bool {
+    open func load() -> Bool {
         
         let path = self.path
-        let data = NSData(contentsOfFile: path)
+        let data = try? Data(contentsOf: URL(fileURLWithPath: path))
         
         if let validData = data {
             
-            let unarchive = NSKeyedUnarchiver(forReadingWithData: validData)
+            let unarchive = NSKeyedUnarchiver(forReadingWith: validData)
             
             self.loadWithArchiver(unarchive)
             
@@ -64,82 +64,82 @@ public class UniversalSaverBase: NSObject {
         
     }//load
     
-    public func saveWithArchiver(archive:NSKeyedArchiver) {
+    open func saveWithArchiver(_ archive:NSKeyedArchiver) {
         
     }//save with NSKeyedArchiver
     
-    public func loadWithArchiver(unarchive:NSKeyedUnarchiver) {
+    open func loadWithArchiver(_ unarchive:NSKeyedUnarchiver) {
         
     }//load with NSKeyedUnarchiver
     
     // MARK: - Class Methods
     
-    public class func pathForFile(file:String, fileExtension:String, directory:String? = nil) -> String {
+    open class func pathForFile(_ file:String, fileExtension:String, directory:String? = nil) -> String {
         
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentDirectoryPath = paths[0] as NSString
         var filePath = documentDirectoryPath
         
         if let validDirectory = directory {
-            filePath = filePath.stringByAppendingPathComponent(validDirectory)
+            filePath = filePath.appendingPathComponent(validDirectory) as NSString
         }
         
-        filePath = filePath.stringByAppendingPathComponent(file)
-        filePath = filePath.stringByAppendingPathExtension(fileExtension)!
+        filePath = filePath.appendingPathComponent(file) as NSString
+        filePath = filePath.appendingPathExtension(fileExtension)! as NSString
         
         return filePath as String
     }//get path in documents directory
     
     //Checks both documents directory and main bundle
-    public class func fileExistsAtPath(file:String, fileExtension:String, directory:String? = nil) -> Bool {
+    open class func fileExistsAtPath(_ file:String, fileExtension:String, directory:String? = nil) -> Bool {
         
         let documentsPath = UniversalSaverBase.pathForFile(file, fileExtension: fileExtension, directory: directory)
-        if (NSFileManager.defaultManager().fileExistsAtPath(documentsPath)) {
+        if (FileManager.default.fileExists(atPath: documentsPath)) {
             return true
         } else {
-            return NSBundle.mainBundle().pathForResource(file, ofType: fileExtension) != nil
+            return Bundle.main.path(forResource: file, ofType: fileExtension) != nil
         }
         
     }//check if file exists in documents directory or in main bundle
     
-    public class func pathForFileInDocumentsOrBundle(file:String, fileExtension:String, directory:String? = nil) -> String? {
+    open class func pathForFileInDocumentsOrBundle(_ file:String, fileExtension:String, directory:String? = nil) -> String? {
         
         let documentsPath = UniversalSaverBase.pathForFile(file, fileExtension: fileExtension, directory: directory)
         
-        if (NSFileManager.defaultManager().fileExistsAtPath(documentsPath)) {
+        if (FileManager.default.fileExists(atPath: documentsPath)) {
             return documentsPath
         } else {
-            return NSBundle.mainBundle().pathForResource(file, ofType: fileExtension)
+            return Bundle.main.path(forResource: file, ofType: fileExtension)
         }
         
     }//get path in documents directory, or main bundle
     
-    public class func createDirectoryAtPath(path:String) {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+    open class func createDirectoryAtPath(_ path:String) {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentDirectoryPath = paths[0] as NSString
         
         var filePath = documentDirectoryPath
-        filePath = filePath.stringByAppendingPathComponent(path)
+        filePath = filePath.appendingPathComponent(path) as NSString
         
-        if (!NSFileManager.defaultManager().fileExistsAtPath(filePath as String)) {
+        if (!FileManager.default.fileExists(atPath: filePath as String)) {
             do {
-                try NSFileManager.defaultManager().createDirectoryAtPath(filePath as String, withIntermediateDirectories: false, attributes: nil)
+                try FileManager.default.createDirectory(atPath: filePath as String, withIntermediateDirectories: false, attributes: nil)
             } catch _ {
             }
         }//folder needs to be created
         
     }//create directory at path
     
-    public class func contentsOfDirectory(directory:String, removeExtensions:Bool = true) -> [NSURL] {
+    open class func contentsOfDirectory(_ directory:String, removeExtensions:Bool = true) -> [URL] {
 
         do {
-            var url = try NSFileManager.defaultManager().URLForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomain: NSSearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create: false)
-            url = url.URLByAppendingPathComponent(directory)
+            var url = try FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false)
+            url = url.appendingPathComponent(directory)
             
-            let contents = try NSFileManager.defaultManager().contentsOfDirectoryAtURL(url, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles)
+            let contents = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
             
             if removeExtensions {
-                return contents.flatMap() { $0.URLByDeletingPathExtension }
+                return contents.flatMap() { $0.deletingPathExtension() }
             }
             
             return contents

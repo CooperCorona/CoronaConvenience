@@ -10,12 +10,12 @@ import Foundation
 
 extension NSRange {
     
-    public var range:Range<Int> { return self.location..<self.location + self.length }
+    public var range:CountableRange<Int> { return self.location..<self.location + self.length }
     
 }
 
-func +(lhs:Range<Int>, rhs:Int) -> Range<Int> {
-    return lhs.startIndex+rhs..<lhs.endIndex+rhs
+func +(lhs:Range<Int>, rhs:Int) -> CountableRange<Int> {
+    return lhs.lowerBound+rhs..<lhs.upperBound+rhs
 }
 
 extension NSRegularExpression {
@@ -28,40 +28,40 @@ extension NSRegularExpression {
         }
     }
     
-    public func matchesInString(string:String) -> [NSTextCheckingResult] {
-        return self.matchesInString(string, options: [], range: NSRange(location: 0, length: string.characterCount))
+    public func matchesInString(_ string:String) -> [NSTextCheckingResult] {
+        return self.matches(in: string, options: [], range: NSRange(location: 0, length: string.characterCount))
     }
     
-    public func matchedStringsInString(string:String) -> [String] {
+    public func matchedStringsInString(_ string:String) -> [String] {
         return self.rangesInString(string).map() { string[$0] }
     }
     
-    public func rangesInString(string:String) -> [Range<Int>] {
+    public func rangesInString(_ string:String) -> [CountableRange<Int>] {
         return self.matchesInString(string).map() { $0.range.range }
     }
 }
 
 extension String {
     
-    public func matchesRegex(regex:String) -> Bool {
+    public func matchesRegex(_ regex:String) -> Bool {
         guard let regExpress = try? NSRegularExpression(pattern: regex, options: []) else {
             return false
         }
         return regExpress.matchesInString(self).count > 0
     }
     
-    public func replaceRegex(regex:String, with replaceStr:String) -> String {
+    public func replaceRegex(_ regex:String, with replaceStr:String) -> String {
         guard let expression = NSRegularExpression(regex: regex) else {
             return self
         }
         let matches = expression.matchesInString(self)
         
         var copiedString = self
-        copiedString.replaceRanges(matches.map() { ($0.range.location..<$0.range.location+$0.range.length, replaceStr) })
+        let _ = copiedString.replaceRanges(matches.map() { ($0.range.location..<$0.range.location+$0.range.length, replaceStr) })
         return copiedString
     }
     
-    public mutating func replaceRegex(regex:String, with replacements:[String]) -> [String] {
+    public mutating func replaceRegex(_ regex:String, with replacements:[String]) -> [String] {
         guard let expression = NSRegularExpression(regex: regex) else {
             return []
         }
@@ -75,7 +75,7 @@ extension String {
         return replaces
     }
     
-    public mutating func replaceRegex<T: GeneratorType where T.Element == String>(regex:String, with withReplacements:T) -> [String] {
+    public mutating func replaceRegex<T: IteratorProtocol>(_ regex:String, with withReplacements:T) -> [String] where T.Element == String {
         guard let expression = NSRegularExpression(regex: regex) else {
             return []
         }
@@ -87,7 +87,7 @@ extension String {
         return replaces
     }
     
-    public func componentsSeperatedByRegex(str:String) -> [String] {
+    public func componentsSeperatedByRegex(_ str:String) -> [String] {
         guard let regex = NSRegularExpression(regex: str) else {
             return [self]
         }
@@ -97,11 +97,11 @@ extension String {
             return [self]
         }
         var strings:[String] = []
-        strings.append(self[0..<firstRange.startIndex])
-        var previousEnd = firstRange.endIndex
+        strings.append(self[0..<firstRange.lowerBound])
+        var previousEnd = firstRange.upperBound
         for (_, range) in ranges.enumerateSkipFirst() {
-            strings.append(self[previousEnd..<range.startIndex])
-            previousEnd = range.endIndex
+            strings.append(self[previousEnd..<range.lowerBound])
+            previousEnd = range.upperBound
         }
         strings.append(self[previousEnd..<self.characterCount])
         return strings

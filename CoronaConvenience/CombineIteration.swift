@@ -8,13 +8,13 @@
 
 import Foundation
 
-public struct IterateWithGenerator<T: GeneratorType, U: GeneratorType>: GeneratorType, SequenceType {
+public struct IterateWithGenerator<T: IteratorProtocol, U: IteratorProtocol>: IteratorProtocol, Sequence {
     
-    public typealias Generator = IterateWithGenerator
+    public typealias Iterator = IterateWithGenerator
     public typealias Element   = (T.Element, U.Element)
     
-    private var firstGenerator:T
-    private var secondGenerator:U
+    fileprivate var firstGenerator:T
+    fileprivate var secondGenerator:U
     
     public init(first:T, second:U) {
         self.firstGenerator     = first
@@ -22,26 +22,26 @@ public struct IterateWithGenerator<T: GeneratorType, U: GeneratorType>: Generato
     }
     
     public mutating func next() -> Element? {
-        guard let first = self.firstGenerator.next(), second = self.secondGenerator.next() else {
+        guard let first = self.firstGenerator.next(), let second = self.secondGenerator.next() else {
             return nil
         }
         return (first, second)
     }
     
-    public func generate() -> IterateWithGenerator {
+    public func makeIterator() -> IterateWithGenerator {
         return self
     }
     
 }
 
-public struct EnumerateWithGenerator<T: GeneratorType, U: GeneratorType>: GeneratorType, SequenceType {
+public struct EnumerateWithGenerator<T: IteratorProtocol, U: IteratorProtocol>: IteratorProtocol, Sequence {
     
-    public typealias Generator  = EnumerateWithGenerator
+    public typealias Iterator  = EnumerateWithGenerator
     public typealias Element    = (Int, T.Element, U.Element)
     
-    private var firstGenerator:T
-    private var secondGenerator:U
-    private var index = 0
+    fileprivate var firstGenerator:T
+    fileprivate var secondGenerator:U
+    fileprivate var index = 0
     
     public init(first:T, second:U) {
         self.firstGenerator     = first
@@ -49,7 +49,7 @@ public struct EnumerateWithGenerator<T: GeneratorType, U: GeneratorType>: Genera
     }
     
     public mutating func next() -> Element? {
-        guard let first = self.firstGenerator.next(), second = self.secondGenerator.next() else {
+        guard let first = self.firstGenerator.next(), let second = self.secondGenerator.next() else {
             return nil
         }
         let currentIndex = self.index
@@ -57,22 +57,22 @@ public struct EnumerateWithGenerator<T: GeneratorType, U: GeneratorType>: Genera
         return (currentIndex, first, second)
     }
     
-    public func generate() -> Generator {
+    public func makeIterator() -> Iterator {
         return self
     }
 }
 
-public struct EnumerateRangeWithGenerator<T: GeneratorType, U: GeneratorType>: GeneratorType, SequenceType {
+public struct EnumerateRangeWithGenerator<T: IteratorProtocol, U: IteratorProtocol>: IteratorProtocol, Sequence {
     
-    public typealias Generator  = EnumerateRangeWithGenerator
+    public typealias Iterator  = EnumerateRangeWithGenerator
     public typealias Element    = (Int, T.Element, U.Element)
     
-    private var firstGenerator:T
-    private var secondGenerator:U
-    private let range:Range<Int>
-    private var index = 0
+    fileprivate var firstGenerator:T
+    fileprivate var secondGenerator:U
+    fileprivate let range:CountableRange<Int>
+    fileprivate var index = 0
     
-    public init(first:T, second:U, range:Range<Int>) {
+    public init(first:T, second:U, range:CountableRange<Int>) {
         self.firstGenerator     = first
         self.secondGenerator    = second
         self.range              = range
@@ -81,14 +81,14 @@ public struct EnumerateRangeWithGenerator<T: GeneratorType, U: GeneratorType>: G
     public mutating func next() -> Element? {
         
         //Must generate until elements start at correct spot.
-        while self.index < self.range.startIndex {
+        while self.index < self.range.lowerBound {
             if self.firstGenerator.next() == nil || self.secondGenerator.next() == nil {
                 return nil
             }
             self.index += 1
         }
         
-        guard let first = self.firstGenerator.next(), second = self.secondGenerator.next() where self.index < range.endIndex else {
+        guard let first = self.firstGenerator.next(), let second = self.secondGenerator.next() , self.index < range.upperBound else {
             return nil
         }
         let currentIndex = self.index
@@ -96,23 +96,23 @@ public struct EnumerateRangeWithGenerator<T: GeneratorType, U: GeneratorType>: G
         return (currentIndex, first, second)
     }
     
-    public func generate() -> Generator {
+    public func makeIterator() -> Iterator {
         return self
     }
 }
 
-extension SequenceType {
+extension Sequence {
     
-    public func iterateWith<T: SequenceType>(otherSequence:T) -> IterateWithGenerator<Self.Generator, T.Generator> {
-        return IterateWithGenerator(first: self.generate(), second: otherSequence.generate())
+    public func iterateWith<T: Sequence>(_ otherSequence:T) -> IterateWithGenerator<Self.Iterator, T.Iterator> {
+        return IterateWithGenerator(first: self.makeIterator(), second: otherSequence.makeIterator())
     }
     
-    public func enumerateWith<T: SequenceType>(otherSequence:T) -> EnumerateWithGenerator<Self.Generator, T.Generator> {
-        return EnumerateWithGenerator(first: self.generate(), second: otherSequence.generate())
+    public func enumerateWith<T: Sequence>(_ otherSequence:T) -> EnumerateWithGenerator<Self.Iterator, T.Iterator> {
+        return EnumerateWithGenerator(first: self.makeIterator(), second: otherSequence.makeIterator())
     }
     
-    public func enumerateWith<T: SequenceType>(otherSequence:T, range:Range<Int>) -> EnumerateRangeWithGenerator<Self.Generator, T.Generator> {
-        return EnumerateRangeWithGenerator(first: self.generate(), second: otherSequence.generate(), range: range)
+    public func enumerateWith<T: Sequence>(_ otherSequence:T, range:CountableRange<Int>) -> EnumerateRangeWithGenerator<Self.Iterator, T.Iterator> {
+        return EnumerateRangeWithGenerator(first: self.makeIterator(), second: otherSequence.makeIterator(), range: range)
     }
     
 }

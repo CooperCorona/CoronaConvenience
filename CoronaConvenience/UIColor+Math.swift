@@ -38,7 +38,7 @@ public extension ColorType {
     
     public convenience init(string:String) {
         
-        let comps = string.componentsSeparatedByString(", ") as [NSString]
+        let comps = string.components(separatedBy: ", ") as [NSString]
         let r = CGFloat(comps[0].floatValue)
         let g = CGFloat(comps[1].floatValue)
         let b = CGFloat(comps[2].floatValue)
@@ -88,14 +88,14 @@ public extension ColorType {
         
         let brightness = comps[0] * 0.2 + comps[1] * 0.7 + comps[2] * 0.1
         if brightness > 0.5 {
-            return ColorType.blackColor()
+            return ColorType.black
         } else {
-            return ColorType.whiteColor()
+            return ColorType.white
         }
     }
     
     ///Lightens or darkens only the RGB values (not the alpha).
-    public func scaleRGB(factor:CGFloat) -> ColorType {
+    public func scaleRGB(_ factor:CGFloat) -> ColorType {
         let rgba = self.getComponents()
         return ColorType(red: rgba[0] * factor, green: rgba[1] * factor, blue: rgba[2] * factor, alpha: rgba[3])
     }
@@ -131,19 +131,19 @@ public func /(left:ColorType, right:ColorType) -> ColorType {
     return ColorType(red: lComps[0] / rComps[0], green: lComps[1] / rComps[1], blue: lComps[2] / rComps[2], alpha: lComps[3] / rComps[3])
 }// /
 
-public func +=(inout left:ColorType, right:ColorType) {
+public func +=(left:inout ColorType, right:ColorType) {
     left = left + right
 }// +=
 
-public func -=(inout left:ColorType, right:ColorType) {
+public func -=(left:inout ColorType, right:ColorType) {
     left = left - right
 }// -=
 
-public func *=(inout left:ColorType, right:ColorType) {
+public func *=(left:inout ColorType, right:ColorType) {
     left = left * right
 }// *=
 
-public func /=(inout left:ColorType, right:ColorType) {
+public func /=(left:inout ColorType, right:ColorType) {
     left = left / right
 }// /=
 
@@ -172,19 +172,19 @@ public func /(left:ColorType, right:CGFloat) -> ColorType {
     return ColorType(red: lComps[0] / right, green: lComps[1] / right, blue: lComps[2] / right, alpha: lComps[3] / right)
 }// / scalar
 
-public func +=(inout left:ColorType, right:CGFloat) {
+public func +=(left:inout ColorType, right:CGFloat) {
     left = left + right
 }// +=
 
-public func -=(inout left:ColorType, right:CGFloat) {
+public func -=(left:inout ColorType, right:CGFloat) {
     left = left - right
 }// -=
 
-public func *=(inout left:ColorType, right:CGFloat) {
+public func *=(left:inout ColorType, right:CGFloat) {
     left = left * right
 }// *=
 
-public func /=(inout left:ColorType, right:CGFloat) {
+public func /=(left:inout ColorType, right:CGFloat) {
     left = left / right
 }// /=
 
@@ -230,18 +230,18 @@ public func /(left:ColorTypeTuple4, right:ColorType) -> ColorType {
     return ColorType(red: left.0 / comps[0], green: left.1 / comps[1], blue: left.2 / comps[2], alpha: left.3 / comps[3])
 }
 
-public func +=(inout left:ColorType, right:ColorTypeTuple4) {
+public func +=(left:inout ColorType, right:ColorTypeTuple4) {
     left = left + right
 }
 
-public func -=(inout left:ColorType, right:ColorTypeTuple4) {
+public func -=(left:inout ColorType, right:ColorTypeTuple4) {
     left = left - right
 }
 
-public func *=(inout left:ColorType, right:ColorTypeTuple4) {
+public func *=(left:inout ColorType, right:ColorTypeTuple4) {
     left = left * right
 }
 
-public func /=(inout left:ColorType, right:ColorTypeTuple4) {
+public func /=(left:inout ColorType, right:ColorTypeTuple4) {
     left = left / right
 }

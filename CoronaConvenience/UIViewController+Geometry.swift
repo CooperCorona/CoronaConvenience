@@ -12,7 +12,7 @@ import UIKit
 public extension UIViewController {
     
     public func locationFromTouches(touches:NSSet) -> CGPoint {
-        return self.view.locationFromTouches(touches)
+        return self.view.locationFromTouches(touches: touches)
         /*
             if (touches.count <= 0) {
                 return CGPoint.zero
@@ -38,7 +38,7 @@ public extension UIViewController {
     }
     
     public func getFrame() -> CGRect {
-        return self.frameForOrientation(self.interfaceOrientation)
+        return self.frameForOrientation(orientation: self.interfaceOrientation)
     }
     
     public func frameForOrientation(orientation:UIInterfaceOrientation) -> CGRect {
@@ -56,10 +56,10 @@ public extension UIViewController {
     
     public func navBarHeight() -> CGFloat {
         
-        let statusH = UIApplication.sharedApplication().statusBarFrame.size.height
+        let statusH = UIApplication.shared.statusBarFrame.size.height
         
         if let navCon = self.navigationController {
-            if (!navCon.navigationBarHidden) {
+            if (!navCon.isNavigationBarHidden) {
                 return navCon.navigationBar.frame.size.height + statusH
             }
             

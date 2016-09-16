@@ -40,19 +40,19 @@ public prefix func -(left:CGPoint) -> CGPoint {
 
 // MARK: - Equals
 
-public func +=(inout left:CGPoint, right:CGPoint) {
+public func +=(left:inout CGPoint, right:CGPoint) {
     left = left + right
 }//plus equals
 
-public func -=(inout left:CGPoint, right:CGPoint) {
+public func -=(left:inout CGPoint, right:CGPoint) {
     left = left - right
 }//minus equals
 
-public func *=(inout left:CGPoint, right:CGPoint) {
+public func *=(left:inout CGPoint, right:CGPoint) {
     left = left * right
 }//multiply equals
 
-public func /=(inout left:CGPoint, right:CGPoint) {
+public func /=(left:inout CGPoint, right:CGPoint) {
     left = left / right
 }//divide equals
 
@@ -93,19 +93,19 @@ public func /(left:CGFloat, right:CGPoint) -> CGPoint {
 
 // MARK: - Equals Scalars
 
-public func +=(inout left:CGPoint, right:CGFloat) {
+public func +=(left:inout CGPoint, right:CGFloat) {
     left = left + right
 }//plus equals scalar
 
-public func -=(inout left:CGPoint, right:CGFloat) {
+public func -=(left:inout CGPoint, right:CGFloat) {
     left = left - right
 }//minus equals scalar
 
-public func *=(inout left:CGPoint, right:CGFloat) {
+public func *=(left:inout CGPoint, right:CGFloat) {
     left = left * right
 }//times equals scalar
 
-public func /=(inout left:CGPoint, right:CGFloat) {
+public func /=(left:inout CGPoint, right:CGFloat) {
     left = left / right
 }//divide equals scalar
 
@@ -201,11 +201,11 @@ public extension CGPoint {
     }//get point as tuple (GLfloat)
     
     
-    public func distanceFrom(point:CGPoint) -> CGFloat {
+    public func distanceFrom(_ point:CGPoint) -> CGFloat {
         return sqrt((x - point.x) * (x - point.x) + (y - point.y) * (y - point.y))
     }//distance from/to other point
     
-    public func angleTo(point:CGPoint) -> CGFloat {
+    public func angleTo(_ point:CGPoint) -> CGFloat {
         return atan2(point.y - self.y, point.x - self.x)
     }//angle to point
     
@@ -223,15 +223,15 @@ public extension CGPoint {
     }//get unit vector
     
     ///Returns a vector (point) in the same direction as *self* but with the given length *length*
-    public func makeLength(length:CGFloat) -> CGPoint {
+    public func makeLength(_ length:CGFloat) -> CGPoint {
         return self.unit() * length
     }
     
-    public func dot(point:CGPoint) -> CGFloat {
+    public func dot(_ point:CGPoint) -> CGFloat {
         return self.x * point.x + self.y * point.y
     }
     
-    public func componentsInDirection(vector:CGPoint) -> CGPoint {
+    public func componentsInDirection(_ vector:CGPoint) -> CGPoint {
         
         if (self.isZero || vector.isZero) {
             return CGPoint.zero
@@ -248,11 +248,11 @@ public extension CGPoint {
     ///Returns true if this point and the other lie on the same axis
     ///(If ```self.x == other.x```, then they lie on the same vertical axis,
     ///if ```self.y == other.y```, then they lie on the same horizontal axis)
-    public func liesOnAxisWith(other:CGPoint) -> Bool {
+    public func liesOnAxisWith(_ other:CGPoint) -> Bool {
         return self.x ~= other.x || self.y ~= other.y
     }
 
-    public func clampDecimals(decimals:Int) -> CGPoint {
+    public func clampDecimals(_ decimals:Int) -> CGPoint {
         let decimal = pow(10.0, CGFloat(decimals))
         return CGPoint(x: round(self.x * decimal), y: round(self.y * decimal)) / decimal
     }
