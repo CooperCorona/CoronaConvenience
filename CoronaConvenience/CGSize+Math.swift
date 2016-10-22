@@ -126,6 +126,12 @@ public extension CGSize {
         return CGSize(width: self.height, height: self.width)
     }
     
+    public func contains(point:CGPoint) -> Bool {
+        //Assumes the CGSize instance defines a CGRect
+        //with origin at (0, 0).
+        return 0.0 <= point.x && point.x <= self.width && 0.0 <= point.y && point.y <= self.height
+    }
+    
 }//size
 /*
 public extension CGSize: FloatLiteralConvertible {
