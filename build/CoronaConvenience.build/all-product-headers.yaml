@@ -1,0 +1,28 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/cooperknaak/Desktop/Xcode Projects/Refactored Dependencies/CoronaConvenience/build/Debug/CoronaConvenience.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "CoronaConvenience-Swift.h",
+          'external-contents': "/Users/cooperknaak/Desktop/Xcode Projects/Refactored Dependencies/CoronaConvenience/build/Debug/CoronaConvenience.framework/Versions/A/Headers/CoronaConvenience-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/cooperknaak/Desktop/Xcode Projects/Refactored Dependencies/CoronaConvenience/build/Debug/CoronaConvenience.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/cooperknaak/Desktop/Xcode Projects/Refactored Dependencies/CoronaConvenience/build/CoronaConvenience.build/Debug/CoronaConvenience.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+provides-member:
+- ["CSo18NotificationCenter", ""]
+- ["CSo18NotificationCenter", "addObserver"]
+- ["CSo18NotificationCenter", "addObserver"]
+- ["CSo18NotificationCenter", "removeObserver"]
+- ["CSo18NotificationCenter", "removeObserver"]
+provides-dynamic-lookup:
+- "addObserver"
+- "addObserver"
+- "removeObserver"
+- "removeObserver"
+depends-top-level:
+- "NotificationCenter"
+- "AnyObject"
+- "String"
+- "Selector"
+- !private "NSNotification"
+depends-member:
+- !private ["Ps9AnyObject", "NSNotification"]
+- !private ["Ps9AnyObject", "Name"]
+- !private ["Ps9AnyObject", "NotificationCenter"]
+- ["Ps9AnyObject", "addObserver"]
+- !private ["Ps9AnyObject", "default"]
+- ["Ps9AnyObject", "deinit"]
+- ["Ps9AnyObject", "removeObserver"]
+- !private ["Ps7CVarArg", "NSNotification"]
+- !private ["Ps7CVarArg", "Name"]
+- !private ["Ps7CVarArg", "NotificationCenter"]
+- ["Ps7CVarArg", "addObserver"]
+- !private ["Ps7CVarArg", "default"]
+- ["Ps7CVarArg", "removeObserver"]
+- !private ["Ps10Comparable", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "NSNotification"]
+- !private ["Ps28CustomDebugStringConvertible", "Name"]
+- !private ["Ps28CustomDebugStringConvertible", "NotificationCenter"]
+- ["Ps28CustomDebugStringConvertible", "addObserver"]
+- !private ["Ps28CustomDebugStringConvertible", "default"]
+- ["Ps28CustomDebugStringConvertible", "removeObserver"]
+- !private ["Ps23CustomStringConvertible", "NSNotification"]
+- !private ["Ps23CustomStringConvertible", "Name"]
+- !private ["Ps23CustomStringConvertible", "NotificationCenter"]
+- ["Ps23CustomStringConvertible", "addObserver"]
+- !private ["Ps23CustomStringConvertible", "default"]
+- ["Ps23CustomStringConvertible", "removeObserver"]
+- !private ["Ps9Equatable", "NSNotification"]
+- !private ["Ps9Equatable", "Name"]
+- !private ["Ps9Equatable", "NotificationCenter"]
+- ["Ps9Equatable", "addObserver"]
+- !private ["Ps9Equatable", "default"]
+- !private ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "removeObserver"]
+- !private ["Ps8Hashable", "NSNotification"]
+- !private ["Ps8Hashable", "Name"]
+- !private ["Ps8Hashable", "NotificationCenter"]
+- ["Ps8Hashable", "addObserver"]
+- !private ["Ps8Hashable", "default"]
+- !private ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "removeObserver"]
+- !private ["PSo8NSCoding", "Name"]
+- !private ["PSo9NSCopying", "Name"]
+- !private ["CSo14NSNotification", "Name"]
+- ["CSo8NSObject", "AnyObject"]
+- !private ["CSo8NSObject", "NSNotification"]
+- !private ["CSo8NSObject", "Name"]
+- !private ["CSo8NSObject", "NotificationCenter"]
+- ["CSo8NSObject", "Selector"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "addObserver"]
+- !private ["CSo8NSObject", "default"]
+- ["CSo8NSObject", "removeObserver"]
+- !private ["PSo16NSObjectProtocol", "NSNotification"]
+- !private ["PSo16NSObjectProtocol", "Name"]
+- !private ["PSo16NSObjectProtocol", "NotificationCenter"]
+- ["PSo16NSObjectProtocol", "addObserver"]
+- !private ["PSo16NSObjectProtocol", "default"]
+- ["PSo16NSObjectProtocol", "removeObserver"]
+- ["VCSo14NSNotification4Name", "deinit"]
+- !private ["VCSo14NSNotification4Name", "init"]
+- ["CSo18NotificationCenter", "AnyObject"]
+- !private ["CSo18NotificationCenter", "NSNotification"]
+- !private ["CSo18NotificationCenter", "NotificationCenter"]
+- ["CSo18NotificationCenter", "Selector"]
+- ["CSo18NotificationCenter", "String"]
+- ["CSo18NotificationCenter", "addObserver"]
+- !private ["CSo18NotificationCenter", "default"]
+- ["CSo18NotificationCenter", "deinit"]
+- ["CSo18NotificationCenter", "removeObserver"]
+- ["Sq", "deinit"]
+- !private ["Ps16RawRepresentable", "init"]
+- ["V10ObjectiveC8Selector", "deinit"]
+- ["SS", "deinit"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "Name"]
+- !private ["Ps9_Hashable", "NSNotification"]
+- !private ["Ps9_Hashable", "Name"]
+- !private ["Ps9_Hashable", "NotificationCenter"]
+- ["Ps9_Hashable", "addObserver"]
+- !private ["Ps9_Hashable", "default"]
+- !private ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "removeObserver"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps20_SwiftNewtypeWrapper", "init"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps7CVarArg"
+- !private "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps8Hashable"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo14NSNotification"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "VCSo14NSNotification4Name"
+- "CSo18NotificationCenter"
+- "Sq"
+- !private "Ps16RawRepresentable"
+- "V10ObjectiveC8Selector"
+- "SS"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps20_SwiftNewtypeWrapper"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreImage.swiftmodule"
+interface-hash: "2a92415a7a746eeaaa4f98afa4be7d7f"

@@ -291,6 +291,14 @@ public func array<T>(_ array:[T], byPadding value:T, toLength length:Int) -> [T]
     return paddedArray
 }
 
+public func array<T>(from:T, to:T) -> [T] where T: Comparable & Strideable, T.Stride: SignedInteger {
+    if from < to {
+        return (from..<to).map() { $0 }
+    } else {
+        return (to..<from).reversed().map() { $0 }
+    }
+}
+
 // MARK: - Sliced Enumeration
 public struct SliceEnumerateGenerator<Base: IteratorProtocol>: IteratorProtocol, Sequence {
     

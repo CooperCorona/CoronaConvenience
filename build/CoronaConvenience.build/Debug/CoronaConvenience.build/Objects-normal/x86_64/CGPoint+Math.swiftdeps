@@ -1,0 +1,319 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "+"
+- "-"
+- "*"
+- "/"
+- "-"
+- "+="
+- "-="
+- "*="
+- "/="
+- "+"
+- "-"
+- "*"
+- "/"
+- "+"
+- "-"
+- "*"
+- "/"
+- "+="
+- "-="
+- "*="
+- "/="
+- "~="
+- "*"
+provides-nominal:
+provides-member:
+- ["VSC7CGPoint", ""]
+- ["VSC7CGPoint", "isZero"]
+- ["VSC7CGPoint", "init"]
+- ["VSC7CGPoint", "init"]
+- ["VSC7CGPoint", "init"]
+- ["VSC7CGPoint", "init"]
+- ["VSC7CGPoint", "init"]
+- ["VSC7CGPoint", "init"]
+- ["VSC7CGPoint", "init"]
+- ["VSC7CGPoint", "length"]
+- ["VSC7CGPoint", "getTuple"]
+- ["VSC7CGPoint", "getTupleCG"]
+- ["VSC7CGPoint", "getGLTuple"]
+- ["VSC7CGPoint", "distanceFrom"]
+- ["VSC7CGPoint", "angleTo"]
+- ["VSC7CGPoint", "angle"]
+- ["VSC7CGPoint", "unit"]
+- ["VSC7CGPoint", "makeLength"]
+- ["VSC7CGPoint", "dot"]
+- ["VSC7CGPoint", "componentsInDirection"]
+- ["VSC7CGPoint", "flip"]
+- ["VSC7CGPoint", "liesOnAxisWith"]
+- ["VSC7CGPoint", "clampDecimals"]
+provides-dynamic-lookup:
+depends-top-level:
+- "Bool"
+- !private "atan2"
+- "-="
+- !private "round"
+- "CGPoint"
+- !private "sqrt"
+- "+"
+- !private "sin"
+- "/="
+- "/"
+- !private "&&"
+- "Float"
+- !private "pow"
+- "GLfloat"
+- "-"
+- !private "FloatLiteralType"
+- "*="
+- "+="
+- "Int"
+- "*"
+- "CGSize"
+- "~="
+- !private "||"
+- "AssignmentPrecedence"
+- !private "cos"
+- "CGFloat"
+depends-member:
+- !private ["Ps16AbsoluteValuable", "Stride"]
+- !private ["Ps16AbsoluteValuable", "init"]
+- !private ["Ps19BinaryFloatingPoint", "Stride"]
+- !private ["Ps19BinaryFloatingPoint", "init"]
+- !private ["Ps17BitwiseOperations", "Stride"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["Sb", "deinit"]
+- !private ["V12CoreGraphics7CGFloat", "Stride"]
+- ["V12CoreGraphics7CGFloat", "deinit"]
+- !private ["V12CoreGraphics7CGFloat", "init"]
+- ["VSC7CGPoint", "Bool"]
+- ["VSC7CGPoint", "CGFloat"]
+- ["VSC7CGPoint", "CGPoint"]
+- ["VSC7CGPoint", "Float"]
+- ["VSC7CGPoint", "GLfloat"]
+- ["VSC7CGPoint", "Int"]
+- ["VSC7CGPoint", "angle"]
+- ["VSC7CGPoint", "angleTo"]
+- !private ["VSC7CGPoint", "atan2"]
+- ["VSC7CGPoint", "clampDecimals"]
+- ["VSC7CGPoint", "componentsInDirection"]
+- !private ["VSC7CGPoint", "cos"]
+- ["VSC7CGPoint", "deinit"]
+- ["VSC7CGPoint", "distanceFrom"]
+- ["VSC7CGPoint", "dot"]
+- ["VSC7CGPoint", "flip"]
+- ["VSC7CGPoint", "getGLTuple"]
+- ["VSC7CGPoint", "getTuple"]
+- ["VSC7CGPoint", "getTupleCG"]
+- ["VSC7CGPoint", "init"]
+- ["VSC7CGPoint", "isZero"]
+- ["VSC7CGPoint", "length"]
+- ["VSC7CGPoint", "liesOnAxisWith"]
+- ["VSC7CGPoint", "makeLength"]
+- !private ["VSC7CGPoint", "pow"]
+- !private ["VSC7CGPoint", "round"]
+- !private ["VSC7CGPoint", "sin"]
+- !private ["VSC7CGPoint", "sqrt"]
+- ["VSC7CGPoint", "unit"]
+- !private ["VSC7CGPoint", "x"]
+- !private ["VSC7CGPoint", "y"]
+- !private ["VSC7CGPoint", "zero"]
+- ["VSC6CGSize", "deinit"]
+- !private ["VSC6CGSize", "height"]
+- !private ["VSC6CGSize", "width"]
+- !private ["Ps7CVarArg", "Stride"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps10Comparable", "Stride"]
+- !private ["Ps10Comparable", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "CGFloat"]
+- !private ["Ps28CustomDebugStringConvertible", "CGPoint"]
+- !private ["Ps28CustomDebugStringConvertible", "GLfloat"]
+- !private ["Ps28CustomDebugStringConvertible", "Stride"]
+- !private ["Ps28CustomDebugStringConvertible", "atan2"]
+- !private ["Ps28CustomDebugStringConvertible", "cos"]
+- !private ["Ps28CustomDebugStringConvertible", "dot"]
+- !private ["Ps28CustomDebugStringConvertible", "height"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "isZero"]
+- !private ["Ps28CustomDebugStringConvertible", "length"]
+- !private ["Ps28CustomDebugStringConvertible", "pow"]
+- !private ["Ps28CustomDebugStringConvertible", "round"]
+- !private ["Ps28CustomDebugStringConvertible", "sin"]
+- !private ["Ps28CustomDebugStringConvertible", "sqrt"]
+- !private ["Ps28CustomDebugStringConvertible", "unit"]
+- !private ["Ps28CustomDebugStringConvertible", "width"]
+- !private ["Ps28CustomDebugStringConvertible", "x"]
+- !private ["Ps28CustomDebugStringConvertible", "y"]
+- !private ["Ps28CustomDebugStringConvertible", "zero"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "CGFloat"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "CGPoint"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "GLfloat"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "Stride"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "atan2"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "cos"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "dot"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "height"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "isZero"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "length"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "pow"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "round"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "sin"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "sqrt"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "unit"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "width"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "x"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "y"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "zero"]
+- !private ["Ps17CustomReflectable", "CGFloat"]
+- !private ["Ps17CustomReflectable", "CGPoint"]
+- !private ["Ps17CustomReflectable", "GLfloat"]
+- !private ["Ps17CustomReflectable", "Stride"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "atan2"]
+- !private ["Ps17CustomReflectable", "cos"]
+- !private ["Ps17CustomReflectable", "dot"]
+- !private ["Ps17CustomReflectable", "height"]
+- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "isZero"]
+- !private ["Ps17CustomReflectable", "length"]
+- !private ["Ps17CustomReflectable", "pow"]
+- !private ["Ps17CustomReflectable", "round"]
+- !private ["Ps17CustomReflectable", "sin"]
+- !private ["Ps17CustomReflectable", "sqrt"]
+- !private ["Ps17CustomReflectable", "unit"]
+- !private ["Ps17CustomReflectable", "width"]
+- !private ["Ps17CustomReflectable", "x"]
+- !private ["Ps17CustomReflectable", "y"]
+- !private ["Ps17CustomReflectable", "zero"]
+- !private ["Ps23CustomStringConvertible", "Stride"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Sd", "Stride"]
+- !private ["Sd", "deinit"]
+- !private ["Ps9Equatable", "CGFloat"]
+- !private ["Ps9Equatable", "CGPoint"]
+- !private ["Ps9Equatable", "GLfloat"]
+- !private ["Ps9Equatable", "Stride"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "atan2"]
+- !private ["Ps9Equatable", "cos"]
+- !private ["Ps9Equatable", "dot"]
+- !private ["Ps9Equatable", "height"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "isZero"]
+- !private ["Ps9Equatable", "length"]
+- !private ["Ps9Equatable", "pow"]
+- !private ["Ps9Equatable", "round"]
+- !private ["Ps9Equatable", "sin"]
+- !private ["Ps9Equatable", "sqrt"]
+- !private ["Ps9Equatable", "unit"]
+- !private ["Ps9Equatable", "width"]
+- !private ["Ps9Equatable", "x"]
+- !private ["Ps9Equatable", "y"]
+- !private ["Ps9Equatable", "zero"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps25ExpressibleByFloatLiteral", "Stride"]
+- !private ["Ps25ExpressibleByFloatLiteral", "init"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "Stride"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "init"]
+- ["Sf", "deinit"]
+- !private ["Sf", "init"]
+- !private ["Ps13FloatingPoint", "Stride"]
+- !private ["Ps13FloatingPoint", "init"]
+- !private ["Ps8Hashable", "Stride"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Si", "Stride"]
+- ["Si", "deinit"]
+- !private ["Ps7Integer", "Stride"]
+- !private ["Ps17IntegerArithmetic", "Stride"]
+- !private ["Ps25LosslessStringConvertible", "Stride"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps10MirrorPath", "Stride"]
+- !private ["Ps13SignedInteger", "Stride"]
+- !private ["Ps12SignedNumber", "Stride"]
+- !private ["Ps12SignedNumber", "init"]
+- !private ["Ps10Strideable", "Stride"]
+- !private ["Ps10Strideable", "init"]
+- !private ["Ps15_CVarArgAligned", "Stride"]
+- !private ["Ps15_CVarArgAligned", "init"]
+- !private ["Ps22_CVarArgPassedAsDouble", "Stride"]
+- !private ["Ps22_CVarArgPassedAsDouble", "init"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps33_ExpressibleByBuiltinFloatLiteral", "Stride"]
+- !private ["Ps33_ExpressibleByBuiltinFloatLiteral", "init"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Stride"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "init"]
+- !private ["Ps9_Hashable", "Stride"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps14_Incrementable", "Stride"]
+- !private ["Ps8_Integer", "Stride"]
+- !private ["Ps18_IntegerArithmetic", "Stride"]
+- !private ["Ps21_ObjectiveCBridgeable", "Stride"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps14_SignedInteger", "Stride"]
+- !private ["Ps11_Strideable", "Stride"]
+- !private ["Ps11_Strideable", "init"]
+depends-nominal:
+- !private "Ps16AbsoluteValuable"
+- !private "Ps19BinaryFloatingPoint"
+- !private "Ps17BitwiseOperations"
+- "Sb"
+- "V12CoreGraphics7CGFloat"
+- "VSC7CGPoint"
+- "VSC6CGSize"
+- !private "Ps7CVarArg"
+- !private "Ps10Comparable"
+- !private "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- !private "Ps23CustomStringConvertible"
+- !private "Sd"
+- !private "Ps9Equatable"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- !private "Ps25ExpressibleByFloatLiteral"
+- !private "Ps27ExpressibleByIntegerLiteral"
+- "Sf"
+- !private "Ps13FloatingPoint"
+- !private "Ps8Hashable"
+- "Si"
+- !private "Ps7Integer"
+- !private "Ps17IntegerArithmetic"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
+- !private "Ps13SignedInteger"
+- !private "Ps12SignedNumber"
+- !private "Ps10Strideable"
+- !private "Ps15_CVarArgAligned"
+- !private "Ps22_CVarArgPassedAsDouble"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- !private "Ps33_ExpressibleByBuiltinFloatLiteral"
+- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- !private "Ps9_Hashable"
+- !private "Ps14_Incrementable"
+- !private "Ps8_Integer"
+- !private "Ps18_IntegerArithmetic"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps14_SignedInteger"
+- !private "Ps11_Strideable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreImage.swiftmodule"
+interface-hash: "af1daa8d3a63e419b80be250c6aa8f95"

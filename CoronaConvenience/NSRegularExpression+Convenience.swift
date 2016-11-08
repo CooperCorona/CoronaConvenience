@@ -28,8 +28,16 @@ extension NSRegularExpression {
         }
     }
     
-    public func matchesInString(_ string:String) -> [NSTextCheckingResult] {
-        return self.matches(in: string, options: [], range: NSRange(location: 0, length: string.characterCount))
+    public func matchesInString(_ string:String) -> [RegexMatch] {
+        let matches = self.matches(in: string, options: [], range: NSRange(location: 0, length: string.characterCount))
+        return matches.map() { m in
+            let match = string[m.range.location..<m.range.location + m.range.length]
+            let groups = array(from: 1, to: m.numberOfRanges).map() { r -> String in
+                let range = m.rangeAt(r)
+                return string[range.location..<range.location + range.length]
+            }
+            return RegexMatch(range: m.range, match: match, groups: groups)
+        }
     }
     
     public func matchedStringsInString(_ string:String) -> [String] {
@@ -105,6 +113,14 @@ extension String {
         }
         strings.append(self[previousEnd..<self.characterCount])
         return strings
+    }
+    
+    public func matches(_ regex:String) -> [RegexMatch] {
+        return NSRegularExpression(regex: regex)?.matchesInString(self) ?? []
+    }
+    
+    public func match(_ regex:String) -> RegexMatch? {
+        return self.matches(regex).first
     }
     
 }

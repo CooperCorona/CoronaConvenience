@@ -1,0 +1,313 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "IterateWithGenerator"
+- "EnumerateWithGenerator"
+- "EnumerateRangeWithGenerator"
+provides-nominal:
+- "V17CoronaConvenience20IterateWithGenerator"
+- "V17CoronaConvenience22EnumerateWithGenerator"
+- "V17CoronaConvenience27EnumerateRangeWithGenerator"
+provides-member:
+- ["V17CoronaConvenience20IterateWithGenerator", ""]
+- ["V17CoronaConvenience22EnumerateWithGenerator", ""]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", ""]
+- ["Ps8Sequence", ""]
+- ["Ps8Sequence", "iterateWith"]
+- ["Ps8Sequence", "enumerateWith"]
+- ["Ps8Sequence", "enumerateWith"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "+="
+- !private "<"
+- "Int"
+- !private "||"
+- "Sequence"
+- "CountableRange"
+- "IterateWithGenerator"
+- "FloatLiteralType"
+- "EnumerateWithGenerator"
+- "IntegerLiteralType"
+- "IteratorProtocol"
+- "EnumerateRangeWithGenerator"
+- "AssignmentPrecedence"
+- !private "=="
+depends-member:
+- ["Vs11AnyIterator", "Element"]
+- ["Vs11AnySequence", "Iterator"]
+- ["Vs11AnySequence", "SubSequence"]
+- !private ["Ps23BidirectionalCollection", "lowerBound"]
+- !private ["Ps23BidirectionalCollection", "upperBound"]
+- !private ["Ps22BidirectionalIndexable", "lowerBound"]
+- !private ["Ps22BidirectionalIndexable", "upperBound"]
+- !private ["Ps17BitwiseOperations", "Stride"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["Sb", "deinit"]
+- !private ["Ps7CVarArg", "Stride"]
+- !private ["Ps10Collection", "lowerBound"]
+- !private ["Ps10Collection", "upperBound"]
+- !private ["Ps10Comparable", "Stride"]
+- ["Vs14CountableRange", "deinit"]
+- !private ["Vs14CountableRange", "lowerBound"]
+- !private ["Vs14CountableRange", "upperBound"]
+- !private ["Ps28CustomDebugStringConvertible", "lowerBound"]
+- ["Ps28CustomDebugStringConvertible", "some"]
+- !private ["Ps28CustomDebugStringConvertible", "upperBound"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "Stride"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "Stride"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "lowerBound"]
+- ["Ps17CustomReflectable", "some"]
+- !private ["Ps17CustomReflectable", "upperBound"]
+- !private ["Ps23CustomStringConvertible", "Stride"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "lowerBound"]
+- !private ["Ps23CustomStringConvertible", "upperBound"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "CountableRange"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "Element"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "EnumerateRangeWithGenerator"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "Int"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "Iterator"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "SubSequence"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "T"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "U"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "_copyContents"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "_copyToContiguousArray"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "_customContainsEquatableElement"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "_preprocessingPass"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "deinit"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "dropFirst"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "dropLast"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "filter"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "first"]
+- !private ["V17CoronaConvenience27EnumerateRangeWithGenerator", "firstGenerator"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "forEach"]
+- !private ["V17CoronaConvenience27EnumerateRangeWithGenerator", "index"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "init"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "makeIterator"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "map"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "next"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "prefix"]
+- !private ["V17CoronaConvenience27EnumerateRangeWithGenerator", "range"]
+- !private ["V17CoronaConvenience27EnumerateRangeWithGenerator", "secondGenerator"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "split"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "suffix"]
+- ["V17CoronaConvenience27EnumerateRangeWithGenerator", "underestimatedCount"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "Element"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "EnumerateWithGenerator"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "Int"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "Iterator"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "SubSequence"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "T"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "U"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "_copyContents"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "_copyToContiguousArray"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "_customContainsEquatableElement"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "_preprocessingPass"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "deinit"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "dropFirst"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "dropLast"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "filter"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "first"]
+- !private ["V17CoronaConvenience22EnumerateWithGenerator", "firstGenerator"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "forEach"]
+- !private ["V17CoronaConvenience22EnumerateWithGenerator", "index"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "init"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "makeIterator"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "map"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "next"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "prefix"]
+- !private ["V17CoronaConvenience22EnumerateWithGenerator", "secondGenerator"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "split"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "suffix"]
+- ["V17CoronaConvenience22EnumerateWithGenerator", "underestimatedCount"]
+- !private ["Ps9Equatable", "Stride"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "lowerBound"]
+- !private ["Ps9Equatable", "upperBound"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "Stride"]
+- ["Ps23ExpressibleByNilLiteral", "some"]
+- !private ["Ps8Hashable", "Stride"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps9Indexable", "lowerBound"]
+- !private ["Ps9Indexable", "upperBound"]
+- !private ["Ps13IndexableBase", "lowerBound"]
+- !private ["Ps13IndexableBase", "upperBound"]
+- !private ["Si", "Stride"]
+- ["Si", "deinit"]
+- !private ["Ps7Integer", "Stride"]
+- !private ["Ps17IntegerArithmetic", "Stride"]
+- ["V17CoronaConvenience20IterateWithGenerator", "Element"]
+- ["V17CoronaConvenience20IterateWithGenerator", "IterateWithGenerator"]
+- ["V17CoronaConvenience20IterateWithGenerator", "Iterator"]
+- ["V17CoronaConvenience20IterateWithGenerator", "SubSequence"]
+- ["V17CoronaConvenience20IterateWithGenerator", "T"]
+- ["V17CoronaConvenience20IterateWithGenerator", "U"]
+- ["V17CoronaConvenience20IterateWithGenerator", "_copyContents"]
+- ["V17CoronaConvenience20IterateWithGenerator", "_copyToContiguousArray"]
+- ["V17CoronaConvenience20IterateWithGenerator", "_customContainsEquatableElement"]
+- ["V17CoronaConvenience20IterateWithGenerator", "_preprocessingPass"]
+- ["V17CoronaConvenience20IterateWithGenerator", "deinit"]
+- ["V17CoronaConvenience20IterateWithGenerator", "dropFirst"]
+- ["V17CoronaConvenience20IterateWithGenerator", "dropLast"]
+- ["V17CoronaConvenience20IterateWithGenerator", "filter"]
+- ["V17CoronaConvenience20IterateWithGenerator", "first"]
+- !private ["V17CoronaConvenience20IterateWithGenerator", "firstGenerator"]
+- ["V17CoronaConvenience20IterateWithGenerator", "forEach"]
+- ["V17CoronaConvenience20IterateWithGenerator", "init"]
+- ["V17CoronaConvenience20IterateWithGenerator", "makeIterator"]
+- ["V17CoronaConvenience20IterateWithGenerator", "map"]
+- ["V17CoronaConvenience20IterateWithGenerator", "next"]
+- ["V17CoronaConvenience20IterateWithGenerator", "prefix"]
+- !private ["V17CoronaConvenience20IterateWithGenerator", "secondGenerator"]
+- ["V17CoronaConvenience20IterateWithGenerator", "split"]
+- ["V17CoronaConvenience20IterateWithGenerator", "suffix"]
+- ["V17CoronaConvenience20IterateWithGenerator", "underestimatedCount"]
+- ["Ps16IteratorProtocol", "Element"]
+- ["Ps16IteratorProtocol", "Iterator"]
+- ["Ps16IteratorProtocol", "SubSequence"]
+- ["Ps16IteratorProtocol", "_copyContents"]
+- ["Ps16IteratorProtocol", "_copyToContiguousArray"]
+- ["Ps16IteratorProtocol", "_customContainsEquatableElement"]
+- ["Ps16IteratorProtocol", "_preprocessingPass"]
+- ["Ps16IteratorProtocol", "dropFirst"]
+- ["Ps16IteratorProtocol", "dropLast"]
+- ["Ps16IteratorProtocol", "filter"]
+- ["Ps16IteratorProtocol", "first"]
+- !private ["Ps16IteratorProtocol", "firstGenerator"]
+- ["Ps16IteratorProtocol", "forEach"]
+- !private ["Ps16IteratorProtocol", "index"]
+- !private ["Ps16IteratorProtocol", "init"]
+- ["Ps16IteratorProtocol", "makeIterator"]
+- ["Ps16IteratorProtocol", "map"]
+- ["Ps16IteratorProtocol", "next"]
+- ["Ps16IteratorProtocol", "prefix"]
+- !private ["Ps16IteratorProtocol", "range"]
+- !private ["Ps16IteratorProtocol", "secondGenerator"]
+- ["Ps16IteratorProtocol", "split"]
+- ["Ps16IteratorProtocol", "suffix"]
+- ["Ps16IteratorProtocol", "underestimatedCount"]
+- ["Ps16IteratorProtocol", ""]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps10MirrorPath", "Stride"]
+- ["Sq", "deinit"]
+- ["Sq", "some"]
+- !private ["Ps22RandomAccessCollection", "lowerBound"]
+- !private ["Ps22RandomAccessCollection", "upperBound"]
+- !private ["Ps21RandomAccessIndexable", "lowerBound"]
+- !private ["Ps21RandomAccessIndexable", "upperBound"]
+- ["Ps8Sequence", "CountableRange"]
+- ["Ps8Sequence", "Element"]
+- ["Ps8Sequence", "EnumerateRangeWithGenerator"]
+- ["Ps8Sequence", "EnumerateWithGenerator"]
+- ["Ps8Sequence", "Int"]
+- ["Ps8Sequence", "IterateWithGenerator"]
+- ["Ps8Sequence", "Iterator"]
+- ["Ps8Sequence", "Self"]
+- ["Ps8Sequence", "Sequence"]
+- ["Ps8Sequence", "SubSequence"]
+- ["Ps8Sequence", "_copyContents"]
+- ["Ps8Sequence", "_copyToContiguousArray"]
+- ["Ps8Sequence", "_customContainsEquatableElement"]
+- ["Ps8Sequence", "_preprocessingPass"]
+- ["Ps8Sequence", "dropFirst"]
+- ["Ps8Sequence", "dropLast"]
+- ["Ps8Sequence", "enumerateWith"]
+- ["Ps8Sequence", "filter"]
+- ["Ps8Sequence", "first"]
+- !private ["Ps8Sequence", "firstGenerator"]
+- ["Ps8Sequence", "forEach"]
+- !private ["Ps8Sequence", "index"]
+- !private ["Ps8Sequence", "init"]
+- ["Ps8Sequence", "iterateWith"]
+- !private ["Ps8Sequence", "lowerBound"]
+- ["Ps8Sequence", "makeIterator"]
+- ["Ps8Sequence", "map"]
+- ["Ps8Sequence", "next"]
+- ["Ps8Sequence", "prefix"]
+- !private ["Ps8Sequence", "range"]
+- !private ["Ps8Sequence", "secondGenerator"]
+- ["Ps8Sequence", "split"]
+- ["Ps8Sequence", "suffix"]
+- ["Ps8Sequence", "underestimatedCount"]
+- !private ["Ps8Sequence", "upperBound"]
+- ["Ps8Sequence", ""]
+- !private ["Ps13SignedInteger", "Stride"]
+- !private ["Ps12SignedNumber", "Stride"]
+- !private ["Ps10Strideable", "Stride"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Stride"]
+- !private ["Ps9_Hashable", "Stride"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps14_Incrementable", "Stride"]
+- !private ["Ps8_Integer", "Stride"]
+- !private ["Ps18_IntegerArithmetic", "Stride"]
+- !private ["Ps21_ObjectiveCBridgeable", "Stride"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- ["Vs26_OptionalNilComparisonType", "deinit"]
+- !private ["Ps14_SignedInteger", "Stride"]
+- !private ["Ps11_Strideable", "Stride"]
+depends-nominal:
+- "Vs11AnyIterator"
+- "Vs11AnySequence"
+- !private "Ps23BidirectionalCollection"
+- !private "Ps22BidirectionalIndexable"
+- !private "Ps17BitwiseOperations"
+- "Sb"
+- !private "Ps7CVarArg"
+- !private "Ps10Collection"
+- !private "Ps10Comparable"
+- "Vs14CountableRange"
+- "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- !private "Ps23CustomStringConvertible"
+- "V17CoronaConvenience27EnumerateRangeWithGenerator"
+- "V17CoronaConvenience22EnumerateWithGenerator"
+- !private "Ps9Equatable"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- !private "Ps27ExpressibleByIntegerLiteral"
+- "Ps23ExpressibleByNilLiteral"
+- !private "Ps8Hashable"
+- !private "Ps9Indexable"
+- !private "Ps13IndexableBase"
+- "Si"
+- !private "Ps7Integer"
+- !private "Ps17IntegerArithmetic"
+- "V17CoronaConvenience20IterateWithGenerator"
+- "Ps16IteratorProtocol"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
+- "Sq"
+- !private "Ps22RandomAccessCollection"
+- !private "Ps21RandomAccessIndexable"
+- "Ps8Sequence"
+- !private "Ps13SignedInteger"
+- !private "Ps12SignedNumber"
+- !private "Ps10Strideable"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- !private "Ps9_Hashable"
+- !private "Ps14_Incrementable"
+- !private "Ps8_Integer"
+- !private "Ps18_IntegerArithmetic"
+- !private "Ps21_ObjectiveCBridgeable"
+- "Vs26_OptionalNilComparisonType"
+- !private "Ps14_SignedInteger"
+- !private "Ps11_Strideable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreImage.swiftmodule"
+interface-hash: "e5327ad13ff51a1df36df9adf651aa12"
