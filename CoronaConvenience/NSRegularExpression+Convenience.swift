@@ -51,15 +51,15 @@ extension NSRegularExpression {
 
 extension String {
     
-    public func matchesRegex(_ regex:String) -> Bool {
-        guard let regExpress = try? NSRegularExpression(pattern: regex, options: []) else {
+    public func matchesRegex(_ regex:String, options:NSRegularExpression.Options = []) -> Bool {
+        guard let regExpress = try? NSRegularExpression(pattern: regex, options: options) else {
             return false
         }
         return regExpress.matchesInString(self).count > 0
     }
     
-    public func replaceRegex(_ regex:String, with replaceStr:String) -> String {
-        guard let expression = NSRegularExpression(regex: regex) else {
+    public func replaceRegex(_ regex:String, with replaceStr:String, options:NSRegularExpression.Options = []) -> String {
+        guard let expression = try? NSRegularExpression(pattern: regex, options: options) else {
             return self
         }
         let matches = expression.matchesInString(self)
@@ -69,8 +69,8 @@ extension String {
         return copiedString
     }
     
-    public mutating func replaceRegex(_ regex:String, with replacements:[String]) -> [String] {
-        guard let expression = NSRegularExpression(regex: regex) else {
+    public mutating func replaceRegex(_ regex:String, with replacements:[String], options:NSRegularExpression.Options = []) -> [String] {
+        guard let expression = try? NSRegularExpression(pattern: regex, options: options) else {
             return []
         }
         let matches = expression.matchesInString(self)
@@ -83,8 +83,8 @@ extension String {
         return replaces
     }
     
-    public mutating func replaceRegex<T: IteratorProtocol>(_ regex:String, with withReplacements:T) -> [String] where T.Element == String {
-        guard let expression = NSRegularExpression(regex: regex) else {
+    public mutating func replaceRegex<T: IteratorProtocol>(_ regex:String, with withReplacements:T, options:NSRegularExpression.Options = []) -> [String] where T.Element == String {
+        guard let expression = try? NSRegularExpression(pattern: regex, options: options) else {
             return []
         }
         let matches = expression.matchesInString(self)
@@ -95,8 +95,8 @@ extension String {
         return replaces
     }
     
-    public func componentsSeperatedByRegex(_ str:String) -> [String] {
-        guard let regex = NSRegularExpression(regex: str) else {
+    public func componentsSeperatedByRegex(_ str:String, options:NSRegularExpression.Options = []) -> [String] {
+        guard let regex = try? NSRegularExpression(pattern: str, options: options) else {
             return [self]
         }
         
@@ -115,12 +115,12 @@ extension String {
         return strings
     }
     
-    public func matches(_ regex:String) -> [RegexMatch] {
-        return NSRegularExpression(regex: regex)?.matchesInString(self) ?? []
+    public func matches(_ regex:String, options:NSRegularExpression.Options = []) -> [RegexMatch] {
+        return (try? NSRegularExpression(pattern: regex, options: options))?.matchesInString(self) ?? []
     }
     
-    public func match(_ regex:String) -> RegexMatch? {
-        return self.matches(regex).first
+    public func match(_ regex:String, options:NSRegularExpression.Options = []) -> RegexMatch? {
+        return self.matches(regex, options: options).first
     }
     
 }

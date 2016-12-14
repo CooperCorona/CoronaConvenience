@@ -34,6 +34,16 @@ extension Int {
         return self % 2 == 0
     }
     
+    public func sign() -> Int {
+        if self < 0 {
+            return -1
+        } else if self > 0 {
+            return 1
+        } else {
+            return 0
+        }
+    }
+    
 }
 
 infix operator /%: MultiplicationPrecedence

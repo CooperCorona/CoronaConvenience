@@ -66,6 +66,14 @@ extension String {
         return self[lowerBound...upperBound]
     }
     
+    public func substring(to:Int) -> String {
+        return self[0..<to]
+    }
+    
+    public func substring(from:Int) -> String {
+        return self[from..<self.characterCount]
+    }
+    
     public var firstCharacter:Character? {
         
         if self == "" {
@@ -139,6 +147,11 @@ extension String {
     public func removeAllWhiteSpace() -> String {
         return self.components(separatedBy: CharacterSet.whitespaces).filter() { $0 != "" } .reduce("") { $0 + $1 }
     }
+
+    public func trim() -> String {
+        return self.trimmingCharacters(in: CharacterSet.whitespaces)
+    }
+
 }
 
 
@@ -156,8 +169,9 @@ public struct StringCharacterGenerator: IteratorProtocol, Sequence {
     }
     
     public mutating func next() -> Element? {
+        var oldIndex = self.index
         self.index += 1
-        return self.base[self.index]
+        return self.base[oldIndex]
     }
     
     public func makeIterator() -> Iterator {
