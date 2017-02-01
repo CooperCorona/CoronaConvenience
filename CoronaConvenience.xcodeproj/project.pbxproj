@@ -10,6 +10,7 @@
 		DC06DFCA1D81F1A6001C5042 /* UIImage+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC06DFC81D81F1A6001C5042 /* UIImage+Creation.swift */; };
 		DC087D7F1D86051C00104A84 /* NSRegularExpression+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC087D7E1D86051C00104A84 /* NSRegularExpression+Convenience.swift */; };
 		DC087D811D86056200104A84 /* String+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC087D801D86056200104A84 /* String+Parsing.swift */; };
+		DC292D101E359B7A00956869 /* NSControl+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC292D0F1E359B7A00956869 /* NSControl+Convenience.swift */; };
 		DC4577531D8515A300711D86 /* BasicCenteredCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4577521D8515A300711D86 /* BasicCenteredCollectionViewLayout.swift */; };
 		DC4D07AF1D7D238600862432 /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A01D7D238600862432 /* Array+Convenience.swift */; };
 		DC4D07B01D7D238600862432 /* Bool+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07A11D7D238600862432 /* Bool+Convenience.swift */; };
@@ -44,6 +45,7 @@
 		DC06DFC81D81F1A6001C5042 /* UIImage+Creation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Creation.swift"; sourceTree = "<group>"; };
 		DC087D7E1D86051C00104A84 /* NSRegularExpression+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Convenience.swift"; sourceTree = "<group>"; };
 		DC087D801D86056200104A84 /* String+Parsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Parsing.swift"; sourceTree = "<group>"; };
+		DC292D0F1E359B7A00956869 /* NSControl+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSControl+Convenience.swift"; sourceTree = "<group>"; };
 		DC4577521D8515A300711D86 /* BasicCenteredCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCenteredCollectionViewLayout.swift; sourceTree = "<group>"; };
 		DC4D07951D7D233A00862432 /* CoronaConvenience.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoronaConvenience.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC4D079A1D7D233A00862432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				DC4D079A1D7D233A00862432 /* Info.plist */,
 				DC4D07A31D7D238600862432 /* Int+Convenience.swift */,
 				DC7428F91D7F453D001AF8E1 /* Math.swift */,
+				DC292D0F1E359B7A00956869 /* NSControl+Convenience.swift */,
 				DC4D07A41D7D238600862432 /* NSFileManager+Convenience.swift */,
 				DC087D7E1D86051C00104A84 /* NSRegularExpression+Convenience.swift */,
 				DC4D07A51D7D238600862432 /* NSNotificationCenter+Convenience.swift */,
@@ -236,6 +239,7 @@
 				DCA4C7FD1DBC008000D00A25 /* UnownedReference.swift in Sources */,
 				DC06DFCA1D81F1A6001C5042 /* UIImage+Creation.swift in Sources */,
 				DC4D07B31D7D238600862432 /* NSFileManager+Convenience.swift in Sources */,
+				DC292D101E359B7A00956869 /* NSControl+Convenience.swift in Sources */,
 				DC7429011D7F453D001AF8E1 /* CGRect+Math.swift in Sources */,
 				DC087D7F1D86051C00104A84 /* NSRegularExpression+Convenience.swift in Sources */,
 				DC4D07BA1D7D238600862432 /* Set+Convenience.swift in Sources */,

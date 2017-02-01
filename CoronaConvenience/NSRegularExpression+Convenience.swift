@@ -18,6 +18,17 @@ func +(lhs:Range<Int>, rhs:Int) -> CountableRange<Int> {
     return lhs.lowerBound+rhs..<lhs.upperBound+rhs
 }
 
+/**
+ NOTE: Swift regular expressions have 0 support for varying number of capture groups.
+ If you try to match "1 2 3 4 5" with "(\\d\\s*)*(\\d)" to try to match every single
+ number, it will not match all the numbers. It will match exactly two of them. The *
+ at the end of the capture group successfully matches 0 or more patterns of that type,
+ but it doesn't actually store them in capture groups. This is especially bad if you use
+ that same regex to match "1". The first capture group won't be stored, but it will still
+ have a range in the NSTextCheckingResult (with location == NSNotFound, some enormous number).
+ I filter out all the ones with invalid ranges, but then you need to pay attention to
+ the order, because it might not be what you expect.
+ */
 extension NSRegularExpression {
     
     public convenience init?(regex:String) {
@@ -32,9 +43,13 @@ extension NSRegularExpression {
         let matches = self.matches(in: string, options: [], range: NSRange(location: 0, length: string.characterCount))
         return matches.map() { m in
             let match = string[m.range.location..<m.range.location + m.range.length]
-            let groups = array(from: 1, to: m.numberOfRanges).map() { r -> String in
+            let groups = array(from: 1, to: m.numberOfRanges).flatMap() { r -> String? in
                 let range = m.rangeAt(r)
-                return string[range.location..<range.location + range.length]
+                if range.location == NSNotFound {
+                    return nil
+                } else {
+                    return string[range.location..<range.location + range.length]
+                }
             }
             return RegexMatch(range: m.range, match: match, groups: groups)
         }

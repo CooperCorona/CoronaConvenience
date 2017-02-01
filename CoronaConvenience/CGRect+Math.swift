@@ -306,6 +306,7 @@ extension CGRect {
             self = CGRect(x: newValue.x - self.size.width, y: newValue.y, width: self.size.width, height: self.size.height)
         }
     }
+
 }
 
 public extension CGRect {
@@ -342,6 +343,18 @@ public extension CGRect {
         return self.divideAt(self.origin + percent * self.size)
     }
 
+    /**
+     Returns the rectangle obtained by treating the
+     components of the input as percents and calculating
+     the corresponding coordinates in terms of self.
+     - parameter rect: A rectangle describing percents. Components should be in [0.0, 1.0].
+     - returns: The rectangle inside of self containing
+     the given percents.
+     */
+    public func inset(rect:CGRect) -> CGRect {
+        return CGRect(origin: self.origin + rect.origin * self.size, size: self.size * rect.size)
+    }
+    
 }
 
 // MARK: - Operators
