@@ -39,6 +39,7 @@
 		DCA4C7FB1DBC004700D00A25 /* WeakReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4C7FA1DBC004700D00A25 /* WeakReference.swift */; };
 		DCA4C7FD1DBC008000D00A25 /* UnownedReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4C7FC1DBC008000D00A25 /* UnownedReference.swift */; };
 		DCC50CD01D81EF1E007092CA /* UIViewController+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */; };
+		DCC542951E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC542941E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		DCA4C7FA1DBC004700D00A25 /* WeakReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakReference.swift; sourceTree = "<group>"; };
 		DCA4C7FC1DBC008000D00A25 /* UnownedReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnownedReference.swift; sourceTree = "<group>"; };
 		DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Geometry.swift"; sourceTree = "<group>"; };
+		DCC542941E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +124,11 @@
 				DC7428F91D7F453D001AF8E1 /* Math.swift */,
 				DC292D0F1E359B7A00956869 /* NSControl+Convenience.swift */,
 				DC4D07A41D7D238600862432 /* NSFileManager+Convenience.swift */,
-				DC087D7E1D86051C00104A84 /* NSRegularExpression+Convenience.swift */,
+				DCC542941E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift */,
 				DC4D07A51D7D238600862432 /* NSNotificationCenter+Convenience.swift */,
 				DC4D07A61D7D238600862432 /* NSObject+Convenience.swift */,
 				DC4D07A71D7D238600862432 /* NSOperation+Convenience.swift */,
+				DC087D7E1D86051C00104A84 /* NSRegularExpression+Convenience.swift */,
 				DC7428FA1D7F453D001AF8E1 /* NSScanner+Swift.swift */,
 				DC4D07A81D7D238600862432 /* NSURL+Convenience.swift */,
 				DC4D07A91D7D238600862432 /* Primitives+Convenience.swift */,
@@ -243,6 +246,7 @@
 				DC7429011D7F453D001AF8E1 /* CGRect+Math.swift in Sources */,
 				DC087D7F1D86051C00104A84 /* NSRegularExpression+Convenience.swift in Sources */,
 				DC4D07BA1D7D238600862432 /* Set+Convenience.swift in Sources */,
+				DCC542951E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift in Sources */,
 				DC4D07B71D7D238600862432 /* NSURL+Convenience.swift in Sources */,
 				DC4D07B81D7D238600862432 /* Primitives+Convenience.swift in Sources */,
 				DC7429021D7F453D001AF8E1 /* CGSize+Math.swift in Sources */,
