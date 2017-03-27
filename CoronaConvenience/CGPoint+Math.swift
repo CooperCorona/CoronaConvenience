@@ -209,6 +209,18 @@ public extension CGPoint {
         return atan2(point.y - self.y, point.x - self.x)
     }//angle to point
     
+    ///Returns the angle from this point to a given point.
+    ///If the resulting value is negative, adds 2 pi to that
+    ///to return the identical angle in positive coordinates.
+    public func positiveAngleTo(_ point:CGPoint) -> CGFloat {
+        let angle = self.angleTo(point)
+        if angle < 0.0 {
+            return angle + CGFloat(M_PI * 2.0)
+        } else {
+            return angle
+        }
+    }//angle to point
+    
     public func angle() -> CGFloat {
         return atan2(self.y, self.x)
     }//returns angle (using atan2)
