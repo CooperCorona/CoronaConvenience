@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Convenience Methods
 extension Set {
     
     public init(array:[Element]) {

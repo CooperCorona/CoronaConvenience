@@ -36,6 +36,7 @@
 		DC7429041D7F453D001AF8E1 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428F91D7F453D001AF8E1 /* Math.swift */; };
 		DC7429051D7F453D001AF8E1 /* NSScanner+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428FA1D7F453D001AF8E1 /* NSScanner+Swift.swift */; };
 		DC7429081D7F453D001AF8E1 /* UIColor+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428FD1D7F453D001AF8E1 /* UIColor+Math.swift */; };
+		DC9FFD6E1EA9660B0058493C /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FFD6D1EA9660B0058493C /* ColorUtils.swift */; };
 		DCA4C7FB1DBC004700D00A25 /* WeakReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4C7FA1DBC004700D00A25 /* WeakReference.swift */; };
 		DCA4C7FD1DBC008000D00A25 /* UnownedReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4C7FC1DBC008000D00A25 /* UnownedReference.swift */; };
 		DCC50CD01D81EF1E007092CA /* UIViewController+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */; };
@@ -74,6 +75,7 @@
 		DC7428F91D7F453D001AF8E1 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Math.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC7428FA1D7F453D001AF8E1 /* NSScanner+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "NSScanner+Swift.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC7428FD1D7F453D001AF8E1 /* UIColor+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Math.swift"; sourceTree = "<group>"; };
+		DC9FFD6D1EA9660B0058493C /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		DCA4C7FA1DBC004700D00A25 /* WeakReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakReference.swift; sourceTree = "<group>"; };
 		DCA4C7FC1DBC008000D00A25 /* UnownedReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnownedReference.swift; sourceTree = "<group>"; };
 		DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Geometry.swift"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				DC7428F51D7F453D001AF8E1 /* CGPoint+Math.swift */,
 				DC7428F61D7F453D001AF8E1 /* CGRect+Math.swift */,
 				DC7428F71D7F453D001AF8E1 /* CGSize+Math.swift */,
+				DC9FFD6D1EA9660B0058493C /* ColorUtils.swift */,
 				DC7428F81D7F453D001AF8E1 /* CombineIteration.swift */,
 				DC4D079A1D7D233A00862432 /* Info.plist */,
 				DC4D07A31D7D238600862432 /* Int+Convenience.swift */,
@@ -245,6 +248,7 @@
 				DC292D101E359B7A00956869 /* NSControl+Convenience.swift in Sources */,
 				DC7429011D7F453D001AF8E1 /* CGRect+Math.swift in Sources */,
 				DC087D7F1D86051C00104A84 /* NSRegularExpression+Convenience.swift in Sources */,
+				DC9FFD6E1EA9660B0058493C /* ColorUtils.swift in Sources */,
 				DC4D07BA1D7D238600862432 /* Set+Convenience.swift in Sources */,
 				DCC542951E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift in Sources */,
 				DC4D07B71D7D238600862432 /* NSURL+Convenience.swift in Sources */,

@@ -150,6 +150,10 @@ public func *(lhs:CGPoint, rhs:CGSize) -> CGPoint {
     return CGPoint(x: lhs.x * rhs.width, y: lhs.y * rhs.height)
 }
 
+public func /(lhs:CGPoint, rhs:CGSize) -> CGPoint {
+    return CGPoint(x: lhs.x / rhs.width, y: lhs.y / rhs.height)
+}
+
 // MARK: - Extension
 public extension CGPoint {
 
