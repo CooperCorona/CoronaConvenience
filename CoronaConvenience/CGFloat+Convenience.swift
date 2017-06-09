@@ -79,7 +79,7 @@ extension CGFloat {
     }
     
     public func ceilTowardZero() -> CGFloat {
-        return ceil(abs(self)) * self.signOf()
+        return ceil(abs(self)) * self.signOf()  
     }
     
     public func isBetween(_ lower:CGFloat, and upper:CGFloat) -> Bool {
@@ -90,7 +90,7 @@ extension CGFloat {
          F     T     F
          F     F     T
          */
-        return (lower <= self) == (self <= upper)
+        return (lower < self || lower ~= self) == (self < upper || upper ~= self)
     }
     
     /**
