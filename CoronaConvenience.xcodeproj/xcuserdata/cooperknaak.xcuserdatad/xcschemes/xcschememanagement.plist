@@ -4,15 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CoronaConvenience.xcscheme</key>
+		<key>CoronaConvenience.Tests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>CoronaConvenience.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>DC4D07941D7D233A00862432</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC6B68C91EB59E7700B0FF92</key>
 		<dict>
 			<key>primary</key>
 			<true/>

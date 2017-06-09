@@ -28,6 +28,9 @@
 		DC4D07BD1D7D238600862432 /* UIView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07AE1D7D238600862432 /* UIView+Convenience.swift */; };
 		DC4D07EA1D7D254600862432 /* UniversalSaverBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D07E91D7D254600862432 /* UniversalSaverBase.swift */; };
 		DC68D2F61DD146B900144FC3 /* RegexMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC68D2F51DD146B900144FC3 /* RegexMatch.swift */; };
+		DC6B68CD1EB59E7700B0FF92 /* CoronaConvenience_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B68CC1EB59E7700B0FF92 /* CoronaConvenience_Tests.swift */; };
+		DC6B68D31EB5A26400B0FF92 /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B68D21EB5A26400B0FF92 /* CGPointTests.swift */; };
+		DC6B68D51EB5A30200B0FF92 /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6B68D41EB5A30200B0FF92 /* CGSizeTests.swift */; };
 		DC7428FF1D7F453D001AF8E1 /* CADisplayLinkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428F41D7F453D001AF8E1 /* CADisplayLinkWrapper.swift */; };
 		DC7429001D7F453D001AF8E1 /* CGPoint+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428F51D7F453D001AF8E1 /* CGPoint+Math.swift */; };
 		DC7429011D7F453D001AF8E1 /* CGRect+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7428F61D7F453D001AF8E1 /* CGRect+Math.swift */; };
@@ -41,6 +44,7 @@
 		DCA4C7FD1DBC008000D00A25 /* UnownedReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4C7FC1DBC008000D00A25 /* UnownedReference.swift */; };
 		DCC50CD01D81EF1E007092CA /* UIViewController+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */; };
 		DCC542951E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC542941E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift */; };
+		DCEE23D21EB666C200195F94 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE23D01EB6664100195F94 /* CGRectTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +71,11 @@
 		DC4D07AE1D7D238600862432 /* UIView+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Convenience.swift"; sourceTree = "<group>"; };
 		DC4D07E91D7D254600862432 /* UniversalSaverBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalSaverBase.swift; sourceTree = "<group>"; };
 		DC68D2F51DD146B900144FC3 /* RegexMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexMatch.swift; sourceTree = "<group>"; };
+		DC6B68CA1EB59E7700B0FF92 /* CoronaConvenience.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoronaConvenience.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC6B68CC1EB59E7700B0FF92 /* CoronaConvenience_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaConvenience_Tests.swift; sourceTree = "<group>"; };
+		DC6B68CE1EB59E7700B0FF92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC6B68D21EB5A26400B0FF92 /* CGPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointTests.swift; sourceTree = "<group>"; };
+		DC6B68D41EB5A30200B0FF92 /* CGSizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeTests.swift; sourceTree = "<group>"; };
 		DC7428F41D7F453D001AF8E1 /* CADisplayLinkWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CADisplayLinkWrapper.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC7428F51D7F453D001AF8E1 /* CGPoint+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "CGPoint+Math.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC7428F61D7F453D001AF8E1 /* CGRect+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "CGRect+Math.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -80,10 +89,18 @@
 		DCA4C7FC1DBC008000D00A25 /* UnownedReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnownedReference.swift; sourceTree = "<group>"; };
 		DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Geometry.swift"; sourceTree = "<group>"; };
 		DCC542941E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Convenience.swift"; sourceTree = "<group>"; };
+		DCEE23D01EB6664100195F94 /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DC4D07911D7D233A00862432 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC6B68C71EB59E7700B0FF92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -97,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				DC4D07971D7D233A00862432 /* CoronaConvenience */,
+				DC6B68CB1EB59E7700B0FF92 /* CoronaConvenience.Tests */,
 				DC4D07961D7D233A00862432 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				DC4D07951D7D233A00862432 /* CoronaConvenience.framework */,
+				DC6B68CA1EB59E7700B0FF92 /* CoronaConvenience.Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +170,18 @@
 			path = CoronaConvenience;
 			sourceTree = "<group>";
 		};
+		DC6B68CB1EB59E7700B0FF92 /* CoronaConvenience.Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DC6B68D21EB5A26400B0FF92 /* CGPointTests.swift */,
+				DCEE23D01EB6664100195F94 /* CGRectTests.swift */,
+				DC6B68D41EB5A30200B0FF92 /* CGSizeTests.swift */,
+				DC6B68CC1EB59E7700B0FF92 /* CoronaConvenience_Tests.swift */,
+				DC6B68CE1EB59E7700B0FF92 /* Info.plist */,
+			);
+			path = CoronaConvenience.Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -182,18 +213,41 @@
 			productReference = DC4D07951D7D233A00862432 /* CoronaConvenience.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		DC6B68C91EB59E7700B0FF92 /* CoronaConvenience.Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC6B68D11EB59E7700B0FF92 /* Build configuration list for PBXNativeTarget "CoronaConvenience.Tests" */;
+			buildPhases = (
+				DC6B68C61EB59E7700B0FF92 /* Sources */,
+				DC6B68C71EB59E7700B0FF92 /* Frameworks */,
+				DC6B68C81EB59E7700B0FF92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoronaConvenience.Tests;
+			productName = CoronaConvenience.Tests;
+			productReference = DC6B68CA1EB59E7700B0FF92 /* CoronaConvenience.Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		DC4D078C1D7D233A00862432 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Cooper Knaak";
 				TargetAttributes = {
 					DC4D07941D7D233A00862432 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
+					};
+					DC6B68C91EB59E7700B0FF92 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = ULGC99Z6NQ;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -210,12 +264,20 @@
 			projectRoot = "";
 			targets = (
 				DC4D07941D7D233A00862432 /* CoronaConvenience */,
+				DC6B68C91EB59E7700B0FF92 /* CoronaConvenience.Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DC4D07931D7D233A00862432 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC6B68C81EB59E7700B0FF92 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -263,6 +325,17 @@
 				DCC50CD01D81EF1E007092CA /* UIViewController+Geometry.swift in Sources */,
 				DCA4C7FB1DBC004700D00A25 /* WeakReference.swift in Sources */,
 				DC4D07BD1D7D238600862432 /* UIView+Convenience.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC6B68C61EB59E7700B0FF92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCEE23D21EB666C200195F94 /* CGRectTests.swift in Sources */,
+				DC6B68D31EB5A26400B0FF92 /* CGPointTests.swift in Sources */,
+				DC6B68D51EB5A30200B0FF92 /* CGSizeTests.swift in Sources */,
+				DC6B68CD1EB59E7700B0FF92 /* CoronaConvenience_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +487,43 @@
 			};
 			name = Release;
 		};
+		DC6B68CF1EB59E7700B0FF92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ULGC99Z6NQ;
+				INFOPLIST_FILE = CoronaConvenience.Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "CooperCorona.CoronaConvenience-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DC6B68D01EB59E7700B0FF92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ULGC99Z6NQ;
+				INFOPLIST_FILE = CoronaConvenience.Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "CooperCorona.CoronaConvenience-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -431,6 +541,15 @@
 			buildConfigurations = (
 				DC4D079E1D7D233A00862432 /* Debug */,
 				DC4D079F1D7D233A00862432 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC6B68D11EB59E7700B0FF92 /* Build configuration list for PBXNativeTarget "CoronaConvenience.Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC6B68CF1EB59E7700B0FF92 /* Debug */,
+				DC6B68D01EB59E7700B0FF92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

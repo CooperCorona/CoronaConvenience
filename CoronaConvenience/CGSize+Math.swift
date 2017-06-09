@@ -63,8 +63,8 @@ public func -(left:CGSize, right:CGFloat) -> CGSize {
     return CGSize(width: left.width - right, height: left.height - right)
 }//minus scalar
 
-public func -(right:CGFloat, left:CGSize) -> CGSize {
-    return CGSize(width: left.width - right, height: left.height - right)
+public func -(left:CGFloat, right:CGSize) -> CGSize {
+    return CGSize(width: left - right.width, height: left - right.height)
 }//minus scalar
 
 public func *(left:CGSize, right:CGFloat) -> CGSize {

@@ -88,7 +88,7 @@ public func *(left:CGFloat, right:CGPoint) -> CGPoint {
 }//multiply scalar
 
 public func /(left:CGFloat, right:CGPoint) -> CGPoint {
-    return CGPoint(x: left / right.x, y: left * right.y)
+    return CGPoint(x: left / right.x, y: left / right.y)
 }//divide scalar
 
 // MARK: - Equals Scalars
