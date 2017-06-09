@@ -44,7 +44,6 @@
 		DCA4C7FD1DBC008000D00A25 /* UnownedReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA4C7FC1DBC008000D00A25 /* UnownedReference.swift */; };
 		DCC50CD01D81EF1E007092CA /* UIViewController+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */; };
 		DCC542951E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC542941E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift */; };
-		DCEE23D11EB6664100195F94 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE23D01EB6664100195F94 /* CGRectTests.swift */; };
 		DCEE23D21EB666C200195F94 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE23D01EB6664100195F94 /* CGRectTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -323,7 +322,6 @@
 				DC4D07B11D7D238600862432 /* CGFloat+Convenience.swift in Sources */,
 				DC4D07B01D7D238600862432 /* Bool+Convenience.swift in Sources */,
 				DC4D07B21D7D238600862432 /* Int+Convenience.swift in Sources */,
-				DCEE23D11EB6664100195F94 /* CGRectTests.swift in Sources */,
 				DCC50CD01D81EF1E007092CA /* UIViewController+Geometry.swift in Sources */,
 				DCA4C7FB1DBC004700D00A25 /* WeakReference.swift in Sources */,
 				DC4D07BD1D7D238600862432 /* UIView+Convenience.swift in Sources */,
