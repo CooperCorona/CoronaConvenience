@@ -20,7 +20,7 @@ public enum ColorChannel: Int {
     case alpha  = 3
 }
 
-extension ColorType {
+extension PlatformColorType {
     
     public var channels:[ColorChannel:CGFloat] {
         let comps = self.getComponents()
@@ -54,25 +54,29 @@ extension ColorType {
         return self.intChannels[channel]!
     }
     
-    public func with(channels:[ColorChannel:CGFloat]) -> ColorType {
+    public func with(channels:[ColorChannel:CGFloat]) -> PlatformColorType {
         let selfChannels = self.channels
-        return ColorType(red: channels[.red] ?? selfChannels[.red]!, green: channels[.green] ?? selfChannels[.green]!, blue: channels[.blue] ?? selfChannels[.blue]!, alpha: channels[.alpha] ?? selfChannels[.alpha]!)
+        let r = channels[.red] ?? selfChannels[.red]!
+        let g = channels[.green] ?? selfChannels[.green]!
+        let b = channels[.blue] ?? selfChannels[.blue]!
+        let a = channels[.alpha] ?? selfChannels[.alpha]!
+        return PlatformColorType(red: r, green: g, blue: b, alpha: a)
     }
     
-    public func with(value:CGFloat, for channel:ColorChannel) -> ColorType {
+    public func with(value:CGFloat, for channel:ColorChannel) -> PlatformColorType {
         return self.with(channels: [channel:value])
     }
     
-    public func with(channels:[ColorChannel:Int]) -> ColorType {
+    public func with(channels:[ColorChannel:Int]) -> PlatformColorType {
         let selfChannels = self.intChannels
         let red = channels[.red] ?? selfChannels[.red]!
         let green = channels[.green] ?? selfChannels[.green]!
         let blue = channels[.blue] ?? selfChannels[.blue]!
         let alpha = channels[.alpha] ?? selfChannels[.alpha]!
-        return ColorType(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha) / 255.0)
+        return PlatformColorType(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha) / 255.0)
     }
     
-    public func with(value:Int, for channel:ColorChannel) -> ColorType {
+    public func with(value:Int, for channel:ColorChannel) -> PlatformColorType {
         return self.with(channels: [channel:value])
     }
     

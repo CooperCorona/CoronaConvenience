@@ -155,7 +155,7 @@ extension String {
 }
 
 
-
+/*
 public struct StringCharacterGenerator: IteratorProtocol, Sequence {
     
     public typealias Element   = Character
@@ -184,8 +184,12 @@ extension String: Sequence {
     
     public typealias Iterator = StringCharacterGenerator
     
-    public func makeIterator() -> Iterator {
+    public func makeIterator() -> IndexingIterator<String> {
         return StringCharacterGenerator(base: self)
     }
+//    public func makeIterator() -> Iterator {
+//        return StringCharacterGenerator(base: self)
+//    }
     
 }
+*/

@@ -13,27 +13,27 @@ import Cocoa
 #endif
 
 #if os(iOS)
-public typealias ColorType = UIColor
+public typealias PlatformColorType = UIColor
 #else
-public typealias ColorType = NSColor
+public typealias PlatformColorType = NSColor
 #endif
 
-public extension ColorType {
+public extension PlatformColorType {
 
-    public class func violetColor() -> ColorType {
-        return ColorType(red: 0.4, green: 0.0, blue: 0.8, alpha: 1.0)
+    public class func violetColor() -> PlatformColorType {
+        return PlatformColorType(red: 0.4, green: 0.0, blue: 0.8, alpha: 1.0)
     }//my personal purple color
     
-    public class func darkRedColor() -> ColorType {
-        return ColorType(red: 0.5, green: 0.0, blue: 0.0, alpha: 1.0)
+    public class func darkRedColor() -> PlatformColorType {
+        return PlatformColorType(red: 0.5, green: 0.0, blue: 0.0, alpha: 1.0)
     }//dark red
     
-    public class func darkGreenColor() -> ColorType {
-        return ColorType(red: 0.0, green: 0.5, blue: 0.0, alpha: 1.0)
+    public class func darkGreenColor() -> PlatformColorType {
+        return PlatformColorType(red: 0.0, green: 0.5, blue: 0.0, alpha: 1.0)
     }//dark green
     
-    public class func darkBlueColor() -> ColorType {
-        return ColorType(red: 0.0, green: 0.0, blue: 0.5, alpha: 1.0)
+    public class func darkBlueColor() -> PlatformColorType {
+        return PlatformColorType(red: 0.0, green: 0.0, blue: 0.5, alpha: 1.0)
     }//dark blue
     
     public convenience init(string:String) {
@@ -74,7 +74,7 @@ public extension ColorType {
     
     //Gets a string.
     //Initializing with the returned String
-    //is guarunteed to return a ColorType
+    //is guarunteed to return a PlatformColorType
     //object that represents the same
     //color as this object
     public func getString() -> String {
@@ -83,165 +83,165 @@ public extension ColorType {
     }
     
     ///Returns either black or white, whichever would show up better when displayed over this color.
-    public func absoluteContrastingColor() -> ColorType {
+    public func absoluteContrastingColor() -> PlatformColorType {
         var comps = self.getComponents()
         
         let brightness = comps[0] * 0.2 + comps[1] * 0.7 + comps[2] * 0.1
         if brightness > 0.5 {
-            return ColorType.black
+            return PlatformColorType.black
         } else {
-            return ColorType.white
+            return PlatformColorType.white
         }
     }
     
     ///Lightens or darkens only the RGB values (not the alpha).
-    public func scaleRGB(_ factor:CGFloat) -> ColorType {
+    public func scaleRGB(_ factor:CGFloat) -> PlatformColorType {
         let rgba = self.getComponents()
-        return ColorType(red: rgba[0] * factor, green: rgba[1] * factor, blue: rgba[2] * factor, alpha: rgba[3])
+        return PlatformColorType(red: rgba[0] * factor, green: rgba[1] * factor, blue: rgba[2] * factor, alpha: rgba[3])
     }
     
 }// UIKit + Math
 
 
-public func +(left:ColorType, right:ColorType) -> ColorType {
+public func +(left:PlatformColorType, right:PlatformColorType) -> PlatformColorType {
     let lComps = left.getComponents()
     let rComps = right.getComponents()
     
-    return ColorType(red: lComps[0] + rComps[0], green: lComps[1] + rComps[1], blue: lComps[2] + rComps[2], alpha: lComps[3] + rComps[3])
+    return PlatformColorType(red: lComps[0] + rComps[0], green: lComps[1] + rComps[1], blue: lComps[2] + rComps[2], alpha: lComps[3] + rComps[3])
 }// +
 
-public func -(left:ColorType, right:ColorType) -> ColorType {
+public func -(left:PlatformColorType, right:PlatformColorType) -> PlatformColorType {
     let lComps = left.getComponents()
     let rComps = right.getComponents()
     
-    return ColorType(red: lComps[0] - rComps[0], green: lComps[1] - rComps[1], blue: lComps[2] - rComps[2], alpha: lComps[3] - rComps[3])
+    return PlatformColorType(red: lComps[0] - rComps[0], green: lComps[1] - rComps[1], blue: lComps[2] - rComps[2], alpha: lComps[3] - rComps[3])
 }// -
 
-public func *(left:ColorType, right:ColorType) -> ColorType {
+public func *(left:PlatformColorType, right:PlatformColorType) -> PlatformColorType {
     let lComps = left.getComponents()
     let rComps = right.getComponents()
     
-    return ColorType(red: lComps[0] * rComps[0], green: lComps[1] * rComps[1], blue: lComps[2] * rComps[2], alpha: lComps[3] * rComps[3])
+    return PlatformColorType(red: lComps[0] * rComps[0], green: lComps[1] * rComps[1], blue: lComps[2] * rComps[2], alpha: lComps[3] * rComps[3])
 }// *
 
-public func /(left:ColorType, right:ColorType) -> ColorType {
+public func /(left:PlatformColorType, right:PlatformColorType) -> PlatformColorType {
     let lComps = left.getComponents()
     let rComps = right.getComponents()
     
-    return ColorType(red: lComps[0] / rComps[0], green: lComps[1] / rComps[1], blue: lComps[2] / rComps[2], alpha: lComps[3] / rComps[3])
+    return PlatformColorType(red: lComps[0] / rComps[0], green: lComps[1] / rComps[1], blue: lComps[2] / rComps[2], alpha: lComps[3] / rComps[3])
 }// /
 
-public func +=(left:inout ColorType, right:ColorType) {
+public func +=(left:inout PlatformColorType, right:PlatformColorType) {
     left = left + right
 }// +=
 
-public func -=(left:inout ColorType, right:ColorType) {
+public func -=(left:inout PlatformColorType, right:PlatformColorType) {
     left = left - right
 }// -=
 
-public func *=(left:inout ColorType, right:ColorType) {
+public func *=(left:inout PlatformColorType, right:PlatformColorType) {
     left = left * right
 }// *=
 
-public func /=(left:inout ColorType, right:ColorType) {
+public func /=(left:inout PlatformColorType, right:PlatformColorType) {
     left = left / right
 }// /=
 
 
-public func +(left:ColorType, right:CGFloat) -> ColorType {
+public func +(left:PlatformColorType, right:CGFloat) -> PlatformColorType {
      let lComps = left.getComponents()
     
-    return ColorType(red: lComps[0] + right, green: lComps[1] + right, blue: lComps[2] + right, alpha: lComps[3] + right)
+    return PlatformColorType(red: lComps[0] + right, green: lComps[1] + right, blue: lComps[2] + right, alpha: lComps[3] + right)
 }// + scalar
 
-public func -(left:ColorType, right:CGFloat) -> ColorType {
+public func -(left:PlatformColorType, right:CGFloat) -> PlatformColorType {
      let lComps = left.getComponents()
     
-    return ColorType(red: lComps[0] - right, green: lComps[1] - right, blue: lComps[2] - right, alpha: lComps[3] - right)
+    return PlatformColorType(red: lComps[0] - right, green: lComps[1] - right, blue: lComps[2] - right, alpha: lComps[3] - right)
 }// - scalar
 
-public func *(left:ColorType, right:CGFloat) -> ColorType {
+public func *(left:PlatformColorType, right:CGFloat) -> PlatformColorType {
      let lComps = left.getComponents()
     
-    return ColorType(red: lComps[0] * right, green: lComps[1] * right, blue: lComps[2] * right, alpha: lComps[3] * right)
+    return PlatformColorType(red: lComps[0] * right, green: lComps[1] * right, blue: lComps[2] * right, alpha: lComps[3] * right)
 }// * scalar
 
-public func /(left:ColorType, right:CGFloat) -> ColorType {
+public func /(left:PlatformColorType, right:CGFloat) -> PlatformColorType {
      let lComps = left.getComponents()
     
-    return ColorType(red: lComps[0] / right, green: lComps[1] / right, blue: lComps[2] / right, alpha: lComps[3] / right)
+    return PlatformColorType(red: lComps[0] / right, green: lComps[1] / right, blue: lComps[2] / right, alpha: lComps[3] / right)
 }// / scalar
 
-public func +=(left:inout ColorType, right:CGFloat) {
+public func +=(left:inout PlatformColorType, right:CGFloat) {
     left = left + right
 }// +=
 
-public func -=(left:inout ColorType, right:CGFloat) {
+public func -=(left:inout PlatformColorType, right:CGFloat) {
     left = left - right
 }// -=
 
-public func *=(left:inout ColorType, right:CGFloat) {
+public func *=(left:inout PlatformColorType, right:CGFloat) {
     left = left * right
 }// *=
 
-public func /=(left:inout ColorType, right:CGFloat) {
+public func /=(left:inout PlatformColorType, right:CGFloat) {
     left = left / right
 }// /=
 
 
 //Tuples
-public typealias ColorTypeTuple4 = (CGFloat, CGFloat, CGFloat, CGFloat)
+public typealias PlatformColorTypeTuple4 = (CGFloat, CGFloat, CGFloat, CGFloat)
 
-public func +(left:ColorType, right:ColorTypeTuple4) -> ColorType {
+public func +(left:PlatformColorType, right:PlatformColorTypeTuple4) -> PlatformColorType {
      let comps = left.getComponents()
-    return ColorType(red: comps[0] + right.0, green: comps[1] + right.1, blue: comps[2] + right.2, alpha: comps[3] + right.3)
+    return PlatformColorType(red: comps[0] + right.0, green: comps[1] + right.1, blue: comps[2] + right.2, alpha: comps[3] + right.3)
 }
 
-public func -(left:ColorType, right:ColorTypeTuple4) -> ColorType {
+public func -(left:PlatformColorType, right:PlatformColorTypeTuple4) -> PlatformColorType {
      let comps = left.getComponents()
-    return ColorType(red: comps[0] - right.0, green: comps[1] - right.1, blue: comps[2] - right.2, alpha: comps[3] - right.3)
+    return PlatformColorType(red: comps[0] - right.0, green: comps[1] - right.1, blue: comps[2] - right.2, alpha: comps[3] - right.3)
 }
 
-public func *(left:ColorType, right:ColorTypeTuple4) -> ColorType {
+public func *(left:PlatformColorType, right:PlatformColorTypeTuple4) -> PlatformColorType {
      let comps = left.getComponents()
-    return ColorType(red: comps[0] * right.0, green: comps[1] * right.1, blue: comps[2] * right.2, alpha: comps[3] * right.3)
+    return PlatformColorType(red: comps[0] * right.0, green: comps[1] * right.1, blue: comps[2] * right.2, alpha: comps[3] * right.3)
 }
 
-public func /(left:ColorType, right:ColorTypeTuple4) -> ColorType {
+public func /(left:PlatformColorType, right:PlatformColorTypeTuple4) -> PlatformColorType {
      let comps = left.getComponents()
-    return ColorType(red: comps[0] / right.0, green: comps[1] / right.1, blue: comps[2] / right.2, alpha: comps[3] / right.3)
+    return PlatformColorType(red: comps[0] / right.0, green: comps[1] / right.1, blue: comps[2] / right.2, alpha: comps[3] / right.3)
 }
 
-public func +(left:ColorTypeTuple4, right:ColorType) -> ColorType {
+public func +(left:PlatformColorTypeTuple4, right:PlatformColorType) -> PlatformColorType {
     return right + left
 }
 
-public func -(left:ColorTypeTuple4, right:ColorType) -> ColorType {
+public func -(left:PlatformColorTypeTuple4, right:PlatformColorType) -> PlatformColorType {
      let comps = right.getComponents()
-    return ColorType(red: left.0 - comps[0], green: left.1 - comps[1], blue: left.2 - comps[2], alpha: left.3 - comps[3])
+    return PlatformColorType(red: left.0 - comps[0], green: left.1 - comps[1], blue: left.2 - comps[2], alpha: left.3 - comps[3])
 }
 
-public func *(left:ColorTypeTuple4, right:ColorType) -> ColorType {
+public func *(left:PlatformColorTypeTuple4, right:PlatformColorType) -> PlatformColorType {
     return right * left
 }
 
-public func /(left:ColorTypeTuple4, right:ColorType) -> ColorType {
+public func /(left:PlatformColorTypeTuple4, right:PlatformColorType) -> PlatformColorType {
      let comps = right.getComponents()
-    return ColorType(red: left.0 / comps[0], green: left.1 / comps[1], blue: left.2 / comps[2], alpha: left.3 / comps[3])
+    return PlatformColorType(red: left.0 / comps[0], green: left.1 / comps[1], blue: left.2 / comps[2], alpha: left.3 / comps[3])
 }
 
-public func +=(left:inout ColorType, right:ColorTypeTuple4) {
+public func +=(left:inout PlatformColorType, right:PlatformColorTypeTuple4) {
     left = left + right
 }
 
-public func -=(left:inout ColorType, right:ColorTypeTuple4) {
+public func -=(left:inout PlatformColorType, right:PlatformColorTypeTuple4) {
     left = left - right
 }
 
-public func *=(left:inout ColorType, right:ColorTypeTuple4) {
+public func *=(left:inout PlatformColorType, right:PlatformColorTypeTuple4) {
     left = left * right
 }
 
-public func /=(left:inout ColorType, right:ColorTypeTuple4) {
+public func /=(left:inout PlatformColorType, right:PlatformColorTypeTuple4) {
     left = left / right
 }

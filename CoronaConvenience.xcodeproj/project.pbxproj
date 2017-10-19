@@ -45,6 +45,8 @@
 		DCC50CD01D81EF1E007092CA /* UIViewController+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */; };
 		DCC542951E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC542941E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift */; };
 		DCEE23D21EB666C200195F94 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE23D01EB6664100195F94 /* CGRectTests.swift */; };
+		DCF15A391F993A1800F212A3 /* Dictionary+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF15A381F993A1800F212A3 /* Dictionary+Convenience.swift */; };
+		DCF15A3B1F993A9800F212A3 /* DictionaryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF15A3A1F993A9800F212A3 /* DictionaryTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		DCC50CCF1D81EF1E007092CA /* UIViewController+Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Geometry.swift"; sourceTree = "<group>"; };
 		DCC542941E7E11EA00C50451 /* NSLayoutConstraint+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Convenience.swift"; sourceTree = "<group>"; };
 		DCEE23D01EB6664100195F94 /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
+		DCF15A381F993A1800F212A3 /* Dictionary+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Convenience.swift"; sourceTree = "<group>"; };
+		DCF15A3A1F993A9800F212A3 /* DictionaryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DictionaryTest.swift; path = CoronaConvenience.Tests/DictionaryTest.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 				DC7428F71D7F453D001AF8E1 /* CGSize+Math.swift */,
 				DC9FFD6D1EA9660B0058493C /* ColorUtils.swift */,
 				DC7428F81D7F453D001AF8E1 /* CombineIteration.swift */,
+				DCF15A381F993A1800F212A3 /* Dictionary+Convenience.swift */,
 				DC4D079A1D7D233A00862432 /* Info.plist */,
 				DC4D07A31D7D238600862432 /* Int+Convenience.swift */,
 				DC7428F91D7F453D001AF8E1 /* Math.swift */,
@@ -177,6 +182,7 @@
 				DCEE23D01EB6664100195F94 /* CGRectTests.swift */,
 				DC6B68D41EB5A30200B0FF92 /* CGSizeTests.swift */,
 				DC6B68CC1EB59E7700B0FF92 /* CoronaConvenience_Tests.swift */,
+				DCF15A3A1F993A9800F212A3 /* DictionaryTest.swift */,
 				DC6B68CE1EB59E7700B0FF92 /* Info.plist */,
 			);
 			path = CoronaConvenience.Tests;
@@ -319,6 +325,7 @@
 				DC4D07AF1D7D238600862432 /* Array+Convenience.swift in Sources */,
 				DC7429051D7F453D001AF8E1 /* NSScanner+Swift.swift in Sources */,
 				DC4577531D8515A300711D86 /* BasicCenteredCollectionViewLayout.swift in Sources */,
+				DCF15A391F993A1800F212A3 /* Dictionary+Convenience.swift in Sources */,
 				DC4D07B11D7D238600862432 /* CGFloat+Convenience.swift in Sources */,
 				DC4D07B01D7D238600862432 /* Bool+Convenience.swift in Sources */,
 				DC4D07B21D7D238600862432 /* Int+Convenience.swift in Sources */,
@@ -336,6 +343,7 @@
 				DC6B68D31EB5A26400B0FF92 /* CGPointTests.swift in Sources */,
 				DC6B68D51EB5A30200B0FF92 /* CGSizeTests.swift in Sources */,
 				DC6B68CD1EB59E7700B0FF92 /* CoronaConvenience_Tests.swift in Sources */,
+				DCF15A3B1F993A9800F212A3 /* DictionaryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

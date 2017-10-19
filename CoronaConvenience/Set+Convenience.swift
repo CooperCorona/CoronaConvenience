@@ -40,4 +40,19 @@ extension Set {
         return element
     }
     
+    public func powerSet() -> Set<Set<Element>> {
+        let list = self.map() { $0 }
+        var sets = Set<Set<Element>>()
+        for j in 0..<(1 << self.count) {
+            var currentSet = Set<Element>()
+            for i in 0..<self.count {
+                if (j & (1 << i)) != 0 {
+                    currentSet.insert(list[i])
+                }
+            }
+            sets.insert(currentSet)
+        }
+        return sets
+    }
+    
 }
