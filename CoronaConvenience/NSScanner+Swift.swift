@@ -18,8 +18,8 @@ public extension Scanner {
     public func scanCharactersFromSet(_ set: CharacterSet) -> String? {
         var value: NSString? = ""
         if scanCharacters(from: set, into: &value),
-            let value = value as? String {
-                return value
+            let value = value {
+                return value as String
         }
         return nil
     }
@@ -28,8 +28,8 @@ public extension Scanner {
     public func scanUpToCharactersFromSet(_ set: CharacterSet) -> String? {
         var value: NSString? = ""
         if scanUpToCharacters(from: set, into: &value),
-            let value = value as? String {
-                return value
+            let value = value {
+                return value as String
         }
         return nil
     }
@@ -38,8 +38,8 @@ public extension Scanner {
     public func scanString(_ str: String) -> String? {
         var value: NSString? = ""
         if scanString(str, into: &value),
-            let value = value as? String {
-                return value
+            let value = value {
+                return value as String
         }
         return nil
     }
@@ -48,8 +48,8 @@ public extension Scanner {
     public func scanUpToString(_ str: String) -> String? {
         var value: NSString? = ""
         if scanUpTo(str, into: &value),
-            let value = value as? String {
-                return value
+            let value = value {
+                return value as String
         }
         return nil
     }

@@ -50,8 +50,8 @@ extension String {
     }
 
     public mutating func replaceRange(_ range:CountableRange<Int>, with replaceStr:String) {
-        let start = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
-        let end = self.characters.index(self.startIndex, offsetBy: range.upperBound)
+        let start = self.index(self.startIndex, offsetBy: range.lowerBound)
+        let end = self.index(self.startIndex, offsetBy: range.upperBound)
         self.replaceSubrange(start..<end, with: replaceStr)
     }
     /*

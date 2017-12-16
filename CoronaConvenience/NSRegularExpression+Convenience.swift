@@ -44,7 +44,7 @@ extension NSRegularExpression {
         return matches.map() { m in
             let match = string[m.range.location..<m.range.location + m.range.length]
             let groups = array(from: 1, to: m.numberOfRanges).flatMap() { r -> String? in
-                let range = m.rangeAt(r)
+                let range = m.range(at: r)
                 if range.location == NSNotFound {
                     return nil
                 } else {

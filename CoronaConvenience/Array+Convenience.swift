@@ -181,7 +181,7 @@ extension Array {
         for iii in 1..<self.count {
             var jjj = iii
             while jjj > 0 && isOrderedBefore(self[jjj], self[jjj - 1]) {
-                swap(&self[jjj - 1], &self[jjj])
+                self.swapAt(jjj - 1, jjj)
                 jjj -= 1
             }
         }
@@ -447,7 +447,7 @@ extension Collection {
             return nil
         }
         
-        let index = Int(arc4random() % UInt32(self.count.toIntMax()))
+        let index = Int(arc4random() % UInt32(Int64(self.count)))
         for (i, element) in self.enumerated() where i == index {
             return element
         }

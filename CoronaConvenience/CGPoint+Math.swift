@@ -219,7 +219,7 @@ public extension CGPoint {
     public func positiveAngleTo(_ point:CGPoint) -> CGFloat {
         let angle = self.angleTo(point)
         if angle < 0.0 {
-            return angle + CGFloat(M_PI * 2.0)
+            return angle + CGFloat.pi * 2.0
         } else {
             return angle
         }

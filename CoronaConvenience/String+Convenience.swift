@@ -25,7 +25,7 @@ extension String {
     // MARK: - Characters
     
     public var characterCount:Int {
-        return self.characters.distance(from: self.startIndex, to: self.endIndex)
+        return self.distance(from: self.startIndex, to: self.endIndex)
     }
     
     public subscript(index:Int) -> Character? {
@@ -34,36 +34,36 @@ extension String {
             return nil
         }
         
-        let stringIndex = self.characters.index(self.startIndex, offsetBy: index)
+        let stringIndex = self.index(self.startIndex, offsetBy: index)
         return self[stringIndex]
     }
     
     ///Returns the substring at a given range.
     public subscript(range:Range<Int>) -> String {
-        let startIndex  = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
-        let endIndex    = self.characters.index(self.startIndex, offsetBy: range.upperBound)
-        return self.substring(with: startIndex..<endIndex)
+        let startIndex  = self.index(self.startIndex, offsetBy: range.lowerBound)
+        let endIndex    = self.index(self.startIndex, offsetBy: range.upperBound)
+        return String(self[startIndex..<endIndex])
     }
     
     ///Returns the substring at a given range.
     subscript(index:CountableRange<Int>) -> String {
         let lowerBound = self.index(self.startIndex, offsetBy: index.lowerBound)
         let upperBound = self.index(self.startIndex, offsetBy: index.upperBound)
-        return self[lowerBound..<upperBound]
+        return String(self[lowerBound..<upperBound])
     }
     
     ///Returns the substring at a given range.
     subscript(index:CountableClosedRange<Int>) -> String {
         let lowerBound = self.index(self.startIndex, offsetBy: index.lowerBound)
         let upperBound = self.index(self.startIndex, offsetBy: index.upperBound)
-        return self[lowerBound...upperBound]
+        return String(self[lowerBound...upperBound])
     }
     
     ///Returns the substring at a given range.
     subscript(index:ClosedRange<Int>) -> String {
         let lowerBound = self.index(self.startIndex, offsetBy: index.lowerBound)
         let upperBound = self.index(self.startIndex, offsetBy: index.upperBound)
-        return self[lowerBound...upperBound]
+        return String(self[lowerBound...upperBound])
     }
     
     public func substring(to:Int) -> String {
@@ -89,7 +89,7 @@ extension String {
             return nil
         }
         
-        return self[self.characters.index(self.endIndex, offsetBy: -1)]
+        return self[self.index(self.endIndex, offsetBy: -1)]
     }
     
     public mutating func removeCharacterAtIndex(_ index:Int) -> Character? {
@@ -98,14 +98,14 @@ extension String {
             return nil
         }
         
-        let stringIndex = self.characters.index(self.startIndex, offsetBy: index)
+        let stringIndex = self.index(self.startIndex, offsetBy: index)
         return self.remove(at: stringIndex)
     }
     
     public mutating func setCharacter(_ char:Character, atIndex index:Int) {
         
         if index >= 0 && index < self.characterCount {
-            let stringIndex = self.characters.index(self.startIndex, offsetBy: index)
+            let stringIndex = self.index(self.startIndex, offsetBy: index)
             self.replaceSubrange(stringIndex...stringIndex, with: "\(char)")
         }
         
@@ -126,7 +126,7 @@ extension String {
             return nil
         }
         
-        let index = self.characters.index(self.startIndex, offsetBy: self.characters.distance(from: self.startIndex, to: self.endIndex) - 1)
+        let index = self.index(self.startIndex, offsetBy: self.distance(from: self.startIndex, to: self.endIndex) - 1)
         return self.remove(at: index)
     }
     

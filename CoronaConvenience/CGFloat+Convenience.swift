@@ -99,7 +99,7 @@ extension CGFloat {
      */
     public func convertNegativeAngleRangeToPositive() -> CGFloat {
         if self < 0.0 {
-            return 2.0 * CGFloat(M_PI) + self
+            return 2.0 * CGFloat.pi + self
         } else {
             return self
         }
@@ -110,8 +110,8 @@ extension CGFloat {
      - returns: The value of self in the range of [-π, π].
      */
     public func convertPositiveAngleRangeToNegative() -> CGFloat {
-        if self > CGFloat(M_PI) {
-            return self - 2.0 * CGFloat(M_PI)
+        if self > CGFloat.pi {
+            return self - 2.0 * CGFloat.pi
         } else {
             return self
         }
