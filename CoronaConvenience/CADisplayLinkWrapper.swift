@@ -17,9 +17,6 @@ display link. It implements all display link functionality,
 so you can smoothly replace any instance of CADisplayLink
 with CADisplayLinkWrapper.
 */
-public class CADisplayLinkWrapper: NSObject {
-    
-    // MARK: - Types
     
     public class InternalWrapper: NSObject
     {
@@ -32,7 +29,7 @@ public class CADisplayLinkWrapper: NSObject {
             super.init()
         }
         
-        func performAction(sender:CADisplayLink) {
+        @objc func performAction(sender:CADisplayLink) {
             self.owner.handler?(sender)
         }
         
@@ -41,6 +38,9 @@ public class CADisplayLinkWrapper: NSObject {
         }
         
     }
+public class CADisplayLinkWrapper: NSObject {
+    
+    // MARK: - Types
     
     // MARK: - Properties
     

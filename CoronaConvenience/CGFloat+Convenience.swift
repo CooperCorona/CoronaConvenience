@@ -42,7 +42,6 @@ return (left ~= right)
 extension CGFloat {
     
     public mutating func decrementTowardsZeroBy(_ decrementValue:CGFloat) {
-        
         if (self > 0.0) {
             self -= decrementValue
         } else {
